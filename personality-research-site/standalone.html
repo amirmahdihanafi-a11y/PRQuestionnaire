@@ -1,0 +1,2437 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ec" />
+  <meta name="description" content="پرسش‌نامه‌ی پژوهشی الگوهای شخصیتی، روابط موضوعی و تجارب هیجانی" />
+  <title>پرسش‌نامه‌ی پژوهشی الگوهای شخصیتی، روابط موضوعی و تجارب هیجانی</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sahel-font@3.4.0/dist/font-face.css" />
+  <style>
+:root {
+  --bg: #f5f2ec;
+  --paper: rgba(255, 255, 255, 0.88);
+  --paper-solid: #fffdf9;
+  --ink: #202421;
+  --muted: #6b716d;
+  --line: #dedbd3;
+  --accent: #496a5a;
+  --accent-2: #dce8df;
+  --accent-3: #294b3b;
+  --warm: #e8d8c7;
+  --danger: #8c3e42;
+  --danger-bg: #fbebec;
+  --warning: #84682b;
+  --warning-bg: #fbf5df;
+  --success: #3c7158;
+  --shadow: 0 20px 50px rgba(45, 53, 48, 0.08);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --max: 900px;
+}
+
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Sahel, Tahoma, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.ambient {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.42;
+  pointer-events: none;
+  z-index: -1;
+}
+.ambient-one { top: -260px; right: -160px; background: radial-gradient(circle, #dbe9df 0%, transparent 68%); }
+.ambient-two { bottom: -300px; left: -180px; background: radial-gradient(circle, #ecded0 0%, transparent 68%); }
+
+.site-header {
+  width: min(calc(100% - 32px), 1120px);
+  margin: 0 auto;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255,255,255,.6);
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+.dot { width: 4px; height: 4px; border-radius: 50%; background: #a7ada8; }
+
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 4px;
+  background: rgba(73,106,90,.12);
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #7f9b8d);
+  transition: width .35s ease;
+}
+
+.app-shell {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 24px auto 60px;
+}
+
+.hero, .panel, .result-hero {
+  background: var(--paper);
+  border: 1px solid rgba(219, 216, 207, .86);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero { padding: clamp(28px, 5vw, 54px); }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-3);
+  background: var(--accent-2);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  margin: 20px 0 16px;
+  font-size: clamp(2rem, 5vw, 3.55rem);
+  line-height: 1.38;
+  letter-spacing: -.035em;
+}
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.15rem); line-height: 1.5; }
+h3 { font-size: 1.08rem; }
+.lead { color: #4f5752; font-size: 1.03rem; line-height: 2.05; }
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+.mini-card {
+  min-height: 112px;
+  padding: 17px;
+  border-radius: var(--radius-md);
+  background: rgba(250,249,245,.9);
+  border: 1px solid var(--line);
+}
+.mini-card strong { display: block; margin-bottom: 5px; }
+.mini-card span { color: var(--muted); font-size: .9rem; }
+
+.consent-box {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.65);
+}
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.check-row input {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  margin-top: 5px;
+  border-radius: 7px;
+  border: 1.5px solid #a5aba7;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+.check-row input:checked { background: var(--accent); border-color: var(--accent); }
+.check-row input:checked::after { content: "✓"; color: white; font-size: 14px; line-height: 1; }
+
+.owner-meta {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.panel { padding: clamp(22px, 4vw, 40px); }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.section-kicker { color: var(--accent); font-size: .88rem; font-weight: 700; margin-bottom: 5px; }
+.section-description { color: var(--muted); max-width: 720px; margin-bottom: 0; }
+.page-chip {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: .82rem;
+  background: rgba(255,255,255,.7);
+}
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field.full { grid-column: 1 / -1; }
+.field label, .field legend { font-weight: 700; }
+.field small { color: var(--muted); }
+
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(255,255,255,.86);
+  color: var(--ink);
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+input:focus, select:focus { border-color: #7e998a; box-shadow: 0 0 0 4px rgba(73,106,90,.1); }
+
+.option-row, .scale-row { display: flex; flex-wrap: wrap; gap: 9px; }
+.option-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.75);
+  color: #3f4642;
+  transition: .18s ease;
+}
+.option-pill:hover { border-color: #9aafa3; transform: translateY(-1px); }
+.option-pill input { position: absolute; opacity: 0; pointer-events: none; }
+.option-pill:has(input:checked) { background: var(--accent); color: white; border-color: var(--accent); box-shadow: 0 8px 18px rgba(73,106,90,.18); }
+
+.ladder {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(32px,1fr));
+  gap: 7px;
+}
+.ladder .option-pill { padding: 6px; min-height: 44px; border-radius: 11px; }
+.ladder-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: .8rem; margin-top: 7px; }
+
+.question-list { display: grid; gap: 14px; }
+.question-card {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.7);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.question-card:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(47,56,51,.055); }
+.question-card.is-missing { border-color: #d08c8f; box-shadow: 0 0 0 4px rgba(140,62,66,.08); }
+.question-text { font-weight: 700; margin-bottom: 15px; line-height: 1.9; }
+.question-topic { color: var(--accent); font-weight: 800; margin-bottom: 6px; font-size: .92rem; }
+
+.linear-scale { display: grid; gap: 8px; }
+.scale-points { display: grid; grid-template-columns: repeat(var(--points), minmax(34px, 1fr)); gap: 7px; }
+.scale-point {
+  position: relative;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(250,250,248,.85);
+  font-weight: 700;
+  color: var(--muted);
+  transition: .18s ease;
+}
+.scale-point input { position: absolute; opacity: 0; }
+.scale-point:has(input:checked) { background: var(--accent); border-color: var(--accent); color: white; transform: translateY(-2px); }
+.scale-endpoints { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: .78rem; }
+
+.group-options { display: grid; gap: 8px; }
+.group-option {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: rgba(250,250,248,.82);
+  transition: .18s ease;
+}
+.group-option input { margin-top: 7px; accent-color: var(--accent); }
+.group-option:has(input:checked) { border-color: #779283; background: #eff5f1; }
+.score-dot {
+  width: 24px; height: 24px; min-width: 24px; border-radius: 50%;
+  display: grid; place-items: center; background: #e8ece9; color: var(--accent-3); font-size: .75rem; font-weight: 800;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+}
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 14px;
+  min-height: 50px;
+  padding: 11px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.btn-primary { background: var(--accent-3); color: white; box-shadow: 0 10px 24px rgba(41,75,59,.18); }
+.btn-secondary { background: rgba(255,255,255,.75); color: var(--ink); border: 1px solid var(--line); }
+.btn-danger { background: transparent; color: var(--danger); border: 1px solid #e0b7b9; }
+.btn-wide { width: 100%; margin-top: 16px; }
+
+.inline-error {
+  display: none;
+  margin: 16px 0 0;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid #efcfd1;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-size: .9rem;
+}
+.inline-error.show { display: block; }
+
+.loading-card { min-height: 320px; display: grid; place-items: center; align-content: center; gap: 14px; color: var(--muted); }
+.loader { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #d7ddd9; border-top-color: var(--accent); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.result-hero { padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden; position: relative; }
+.result-hero::after { content: ""; position: absolute; width: 250px; height: 250px; border-radius: 50%; background: var(--accent-2); left: -100px; top: -110px; opacity: .65; }
+.result-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+.profile-card, .score-panel, .detail-panel, .safety-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.78);
+  padding: 22px;
+}
+.profile-card { position: relative; overflow: hidden; }
+.profile-icon { font-size: 3rem; line-height: 1; margin-bottom: 12px; }
+.match-badge { display: inline-flex; padding: 5px 10px; border-radius: 999px; background: var(--accent-2); color: var(--accent-3); font-size: .82rem; font-weight: 800; }
+.profile-card ul { margin: 12px 0 0; padding-right: 20px; color: #4b534e; }
+.secondary-profiles { display: grid; gap: 10px; }
+.secondary-profile { display: flex; gap: 10px; align-items: center; padding: 12px; border-radius: 14px; background: #f7f7f3; border: 1px solid var(--line); }
+.secondary-profile .icon { font-size: 1.45rem; }
+.secondary-profile strong { display: block; }
+.secondary-profile small { color: var(--muted); }
+
+.disclaimer {
+  border-right: 4px solid var(--accent);
+  padding: 13px 15px;
+  background: #f1f5f2;
+  border-radius: 12px;
+  color: #4c5751;
+  font-size: .9rem;
+  margin-top: 20px;
+}
+
+.safety-card { margin-bottom: 18px; border-color: #e1b9bb; background: var(--danger-bg); }
+.safety-card h3 { color: var(--danger); }
+.safety-card p { margin-bottom: 0; }
+.safety-card.warning { border-color: #ead8a8; background: var(--warning-bg); }
+.safety-card.warning h3 { color: var(--warning); }
+
+.score-panel { margin-bottom: 18px; }
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.metric {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fafaf7;
+  padding: 15px;
+}
+.metric-label { color: var(--muted); font-size: .82rem; }
+.metric-value { font-size: 1.55rem; font-weight: 900; margin: 3px 0; }
+.metric-note { color: var(--accent-3); font-size: .82rem; font-weight: 700; }
+
+.detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.detail-panel { margin-bottom: 18px; }
+.bar-list { display: grid; gap: 13px; }
+.bar-row { display: grid; grid-template-columns: minmax(145px, .9fr) 1.5fr 42px; gap: 10px; align-items: center; }
+.bar-label { font-size: .88rem; }
+.bar-track { height: 9px; border-radius: 999px; background: #e6e8e4; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, #7f9b8d, var(--accent)); }
+.bar-value { font-size: .78rem; color: var(--muted); text-align: left; }
+
+.result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.submission-state { margin-top: 14px; color: var(--muted); font-size: .84rem; }
+.submission-state.success { color: var(--success); }
+.submission-state.warning { color: var(--warning); }
+
+.site-footer {
+  width: min(calc(100% - 32px), 1120px);
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+.noscript { margin: 20px; padding: 16px; border-radius: 12px; background: var(--danger-bg); color: var(--danger); }
+
+@media (max-width: 760px) {
+  .site-header { min-height: 66px; }
+  .brand span:last-child { display: none; }
+  .intro-grid, .metric-grid, .detail-grid, .result-grid, .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .section-head { flex-direction: column; }
+  .page-chip { align-self: flex-start; }
+  .bar-row { grid-template-columns: minmax(115px,.9fr) 1.2fr 35px; }
+  .question-card { padding: 16px; }
+  .ladder { grid-template-columns: repeat(5, 1fr); }
+  .nav-row .btn { flex: 1; padding-inline: 12px; }
+  .header-meta { font-size: .78rem; }
+}
+
+@media (max-width: 470px) {
+  .app-shell { width: min(calc(100% - 20px), var(--max)); margin-top: 12px; }
+  .hero, .panel, .result-hero { border-radius: 21px; }
+  h1 { font-size: 1.8rem; }
+  .scale-point { min-height: 40px; }
+  .scale-endpoints { font-size: .7rem; }
+  .bar-row { grid-template-columns: 1fr; gap: 5px; }
+  .bar-value { text-align: right; }
+}
+
+@media print {
+  body { background: white; }
+  .site-header, .progress-wrap, .site-footer, .result-actions, .ambient { display: none !important; }
+  .app-shell { width: 100%; margin: 0; }
+  .result-hero, .score-panel, .detail-panel, .safety-card { box-shadow: none; break-inside: avoid; background: white; }
+  .detail-grid, .result-grid { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="بازگشت به ابتدای پرسش‌نامه">
+      <span class="brand-mark" aria-hidden="true">◌</span>
+      <span>پژوهش دانشجویی</span>
+    </a>
+    <div id="headerMeta" class="header-meta" hidden>
+      <span id="sectionCounter"></span>
+      <span class="dot" aria-hidden="true"></span>
+      <span id="answeredCounter"></span>
+    </div>
+  </header>
+
+  <div id="progressWrap" class="progress-wrap" hidden aria-hidden="true">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  <main id="app" class="app-shell" aria-live="polite">
+    <section class="loading-card">
+      <span class="loader" aria-hidden="true"></span>
+      <p>در حال آماده‌سازی پرسش‌نامه…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>پاسخ‌ها بی‌نام هستند.</span>
+    <span>این بازخورد جایگزین ارزیابی تخصصی نیست.</span>
+  </footer>
+
+  <noscript>
+    <div class="noscript">برای تکمیل این پرسش‌نامه باید JavaScript مرورگر فعال باشد.</div>
+  </noscript>
+
+  <script>
+/*
+  تنظیمات اجرایی سایت
+  پس از انتشار Google Apps Script، نشانی Web App را در submissionEndpoint قرار دهید.
+*/
+window.SURVEY_CONFIG = {
+  submissionEndpoint: "",
+  researcherName: "",
+  researcherContact: "",
+  institution: "",
+  ethicsCode: "",
+  googleFormUrl: ""
+};
+
+</script>
+  <script>
+window.SURVEY_DATA = {
+  "meta": {
+    "title": "پرسش‌نامه‌ی پژوهشی الگوهای شخصیتی، روابط موضوعی و تجارب هیجانی",
+    "intro": "این پژوهش با هدف بررسی الگوهای شخصیتی، کیفیت روابط بین‌فردی و تجارب هیجانی در دانشجویان دانشگاه‌های استان تهران انجام می‌شود. تکمیل این پرسشنامه حدود ۲۰ دقیقه زمان می‌برد و شامل چند بخش کوتاه است. شرکت در این پژوهش کاملاً داوطلبانه است و شما در هر مرحله می‌توانید بدون هیچ عواقبی از ادامه‌ی آن انصراف دهید. پاسخ‌های شما به‌صورت کاملاً محرمانه و بی‌نام ثبت می‌شود و صرفاً برای اهداف پژوهشی و به‌صورت گروهی (نه فردی) تحلیل خواهد شد. لطفاً به تمامی سؤالات با دقت و صداقت پاسخ دهید؛ پاسخ درست یا غلط در کار نیست و آنچه اهمیت دارد، تجربه‌ی واقعی شماست. شرکت در این پژوهش مخصوص دانشجویان ۱۸ تا ۳۰ سال است.",
+    "demographicIntro": "در این بخش لطفاً اطلاعات کلی خود شامل سن، جنسیت، دانشگاه محل تحصیل و مقطع تحصیلی را وارد کنید. این اطلاعات صرفاً برای توصیف نمونه‌ی پژوهش استفاده می‌شود و هویت شما را آشکار نمی‌کند."
+  },
+  "sections": [
+    {
+      "id": "anxiety",
+      "instruction": "لطفاً هر عبارت را به دقت بخوانید و مشخص کنید در خلال هفته‌ی گذشته تا امروز چه‌قدر از آن علامت در رنج بوده‌اید.",
+      "type": "likert",
+      "chunkSize": 7,
+      "items": [
+        "کرخی و گزگز شدن (مورمور شدن)",
+        "احساس داغی یا گرما",
+        "لرزش در پاها",
+        "ناتوانی در آرامش",
+        "ترس از وقوع حادثه‌ای بد",
+        "سرگیجه و منگی",
+        "تپش قلب یا نفس‌نفس زدن",
+        "حالت بی‌ثباتی",
+        "وحشت‌زدگی",
+        "عصبی بودن",
+        "احساس خفگی",
+        "لرزش دست",
+        "لرزش بدن",
+        "ترس از دست دادن کنترل",
+        "به‌سختی نفس کشیدن",
+        "ترس از مردن",
+        "ترسیده بودن",
+        "سوءهاضمه یا ناراحتی در شکم",
+        "غش کردن یا از حال رفتن",
+        "سرخ شدن صورت",
+        "عرق کردن (نه در اثر گرما)"
+      ],
+      "options": [
+        {
+          "value": 0,
+          "label": "اصلاً"
+        },
+        {
+          "value": 1,
+          "label": "خفیف؛ زیاد ناراحتم نکرده است"
+        },
+        {
+          "value": 2,
+          "label": "متوسط؛ خیلی ناخوشایند بود اما تحمل کردم"
+        },
+        {
+          "value": 3,
+          "label": "شدید؛ نمی‌توانستم آن را تحمل کنم"
+        }
+      ]
+    },
+    {
+      "id": "worry",
+      "instruction": "در این بخش، افکاری در مورد نگرانی ذکر شده‌اند که گاه ممکن است به ذهن افراد بیایند. هر عبارت را با دقت بخوانید و مشخص کنید آن فکر طی هفته‌ی گذشته تا چه حد به ذهن شما آمده است. لطفاً به تمام سؤال‌ها پاسخ دهید.",
+      "type": "linear",
+      "chunkSize": 8,
+      "items": [
+        "اگر وقت کافی نداشته باشم که کاری را انجام بدهم، نگران نمی‌شوم.",
+        "نگرانی‌های من امانم را بریده‌اند.",
+        "در مورد چیزی نگران نمی‌شوم.",
+        "موقعیت‌های بسیاری مرا نگران می‌کنند.",
+        "می‌دانم که نباید راجع به بعضی چیزها نگران باشم، اما چاره‌ای هم برای آن نمی‌توانم پیدا کنم.",
+        "موقعی که تحت فشار هستم خیلی نگران می‌شوم.",
+        "همیشه در مورد چیزی نگرانم.",
+        "خیلی راحت افکار نگران‌کننده را از خودم دور می‌کنم.",
+        "به محض این‌که کاری را تمام می‌کنم، در مورد کار دیگری که می‌خواهم انجام بدهم نگرانی‌ام شروع می‌شود.",
+        "هرگز راجع به چیزی نگران نمی‌شوم.",
+        "وقتی تمام تلاشم را برای انجام کاری کرده باشم، دیگر در مورد آن نگران نمی‌شوم.",
+        "من در تمام زندگی‌ام نگران بوده‌ام.",
+        "می‌دانم که معمولاً راجع به کارها نگران بوده‌ام.",
+        "وقتی نگرانی‌ام شروع می‌شود، نمی‌توانم آن را متوقف کنم.",
+        "من همیشه نگرانم.",
+        "تا زمانی که کارهایم تمام شوند در مورد آن‌ها نگرانم."
+      ],
+      "min": 1,
+      "max": 5,
+      "minLabel": "کاملاً مخالفم",
+      "maxLabel": "کاملاً موافقم",
+      "reverse": [
+        1,
+        3,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "depression",
+      "instruction": "لطفاً هر گروه از جملات را به دقت بخوانید و سپس در هر گروه یک جمله را انتخاب کنید که بهتر از همه گویای احساس شما طی دو هفته‌ی گذشته تا همین امروز است.",
+      "type": "grouped",
+      "chunkSize": 5,
+      "groups": [
+        {
+          "title": "احساس غمگینی",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساس غمگینی نمی‌کنم."
+            },
+            {
+              "value": 1,
+              "text": "اغلب اوقات احساس غمگینی می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "همیشه غمگینم."
+            },
+            {
+              "value": 3,
+              "text": "به‌قدری غمگین و بی‌نشاطم که تاب تحملش را ندارم."
+            }
+          ]
+        },
+        {
+          "title": "بدبینی",
+          "options": [
+            {
+              "value": 0,
+              "text": "نسبت به آینده بدبین نیستم."
+            },
+            {
+              "value": 1,
+              "text": "بیش از گذشته نسبت به آینده احساس بدبینی می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "انتظار ندارم وضعم بهتر شود."
+            },
+            {
+              "value": 3,
+              "text": "امیدی نسبت به آینده ندارم و فقط می‌دانم که وضع هرچه بدتر خواهد شد."
+            }
+          ]
+        },
+        {
+          "title": "شکست‌های گذشته",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساس نمی‌کنم شخص شکست‌خورده‌ای باشم."
+            },
+            {
+              "value": 1,
+              "text": "بیش از آنچه سزاوار بوده‌ام، شکست خورده‌ام."
+            },
+            {
+              "value": 2,
+              "text": "وقتی به زندگی گذشته‌ام نگاه می‌کنم، جز شکست چیزی نمی‌بینم."
+            },
+            {
+              "value": 3,
+              "text": "احساس می‌کنم شخص کاملاً شکست‌خورده‌ای هستم."
+            }
+          ]
+        },
+        {
+          "title": "فقدان لذت",
+          "options": [
+            {
+              "value": 0,
+              "text": "به اندازه‌ی گذشته از دنیای اطرافم لذت می‌برم."
+            },
+            {
+              "value": 1,
+              "text": "از چیزهایی که در گذشته برایم لذت‌بخش بودند، کمتر لذت می‌برم."
+            },
+            {
+              "value": 2,
+              "text": "دیگر به اندازه‌ی گذشته از چیزهای اطرافم لذت نمی‌برم."
+            },
+            {
+              "value": 3,
+              "text": "از چیزهایی که در گذشته لذت می‌بردم، هیچ لذتی نمی‌برم."
+            }
+          ]
+        },
+        {
+          "title": "احساس گناه",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساس گناه خاصی ندارم."
+            },
+            {
+              "value": 1,
+              "text": "درباره‌ی بسیاری از چیزهایی که در گذشته انجام داده‌ام یا باید انجام می‌دادم، احساس گناه می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "اغلب اوقات خود را کاملاً گناهکار می‌دانم."
+            },
+            {
+              "value": 3,
+              "text": "همیشه خود را گناهکار می‌دانم."
+            }
+          ]
+        },
+        {
+          "title": "احساسات مربوط به مجازات",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساس نمی‌کنم که دارم مجازات می‌شوم."
+            },
+            {
+              "value": 1,
+              "text": "احساس می‌کنم ممکن است مجازات شوم."
+            },
+            {
+              "value": 2,
+              "text": "انتظار مجازات دارم."
+            },
+            {
+              "value": 3,
+              "text": "احساس می‌کنم که دارم مجازات می‌شوم."
+            }
+          ]
+        },
+        {
+          "title": "بیزاری از خویشتن",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساسم درباره‌ی خودم مانند همیشه است."
+            },
+            {
+              "value": 1,
+              "text": "اعتمادبه‌نفسم را از دست داده‌ام."
+            },
+            {
+              "value": 2,
+              "text": "از خودم مأیوسم."
+            },
+            {
+              "value": 3,
+              "text": "از خودم خوشم نمی‌آید."
+            }
+          ]
+        },
+        {
+          "title": "عیب‌جویی از خویشتن",
+          "options": [
+            {
+              "value": 0,
+              "text": "بیش از حد معمول خود را مورد انتقاد یا سرزنش قرار نمی‌دهم."
+            },
+            {
+              "value": 1,
+              "text": "بیش از گذشته از خودم عیب‌جویی می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "در مورد همه‌ی اشتباهاتم خود را مورد انتقاد قرار می‌دهم."
+            },
+            {
+              "value": 3,
+              "text": "برای هر اتفاق بدی که می‌افتد، خود را سرزنش می‌کنم."
+            }
+          ]
+        },
+        {
+          "title": "فکر خودکشی یا میل به خودکشی",
+          "options": [
+            {
+              "value": 0,
+              "text": "اصلاً در فکر آن نیستم که به خودم آسیبی برسانم."
+            },
+            {
+              "value": 1,
+              "text": "درباره‌ی این‌که به خودم آسیبی برسانم فکر می‌کنم، اما به آن عمل نمی‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "دلم می‌خواهد خود را بکشم."
+            },
+            {
+              "value": 3,
+              "text": "اگر فرصتی داشتم، خود را می‌کشتم."
+            }
+          ]
+        },
+        {
+          "title": "گریه",
+          "options": [
+            {
+              "value": 0,
+              "text": "بیش از گذشته گریه نمی‌کنم."
+            },
+            {
+              "value": 1,
+              "text": "بیش از گذشته گریه می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "سر هر چیز کوچکی به گریه می‌افتم."
+            },
+            {
+              "value": 3,
+              "text": "احساس می‌کنم می‌خواهم گریه کنم، اما نمی‌توانم."
+            }
+          ]
+        },
+        {
+          "title": "برانگیختگی و بی‌قراری",
+          "options": [
+            {
+              "value": 0,
+              "text": "بیش از حد معمول بی‌قرار یا آشفته نیستم."
+            },
+            {
+              "value": 1,
+              "text": "احساس می‌کنم بیش از حد معمول بی‌قرار یا آشفته هستم."
+            },
+            {
+              "value": 2,
+              "text": "به‌قدری بی‌قرار و برانگیخته‌ام که نمی‌توانم آرام بگیرم."
+            },
+            {
+              "value": 3,
+              "text": "به‌قدری بی‌قرار و برانگیخته‌ام که باید این طرف و آن طرف بروم یا خود را به کاری مشغول کنم."
+            }
+          ]
+        },
+        {
+          "title": "بی‌علاقگی",
+          "options": [
+            {
+              "value": 0,
+              "text": "علاقه‌ام را به مردم و چیزها از دست نداده‌ام."
+            },
+            {
+              "value": 1,
+              "text": "کمتر از گذشته به مردم و چیزها علاقه دارم."
+            },
+            {
+              "value": 2,
+              "text": "بیشتر علاقه‌ام را به مردم و چیزها از دست داده‌ام."
+            },
+            {
+              "value": 3,
+              "text": "بسیار دشوار است که بتوانم به چیزی علاقه پیدا کنم."
+            }
+          ]
+        },
+        {
+          "title": "بلاتکلیفی",
+          "options": [
+            {
+              "value": 0,
+              "text": "مثل همیشه می‌توانم تصمیم بگیرم."
+            },
+            {
+              "value": 1,
+              "text": "تصمیم گرفتن برایم دشوارتر از حد معمول است."
+            },
+            {
+              "value": 2,
+              "text": "بیش از گذشته در تصمیم‌گیری مشکل دارم."
+            },
+            {
+              "value": 3,
+              "text": "درباره‌ی گرفتن هر تصمیمی با اشکال روبه‌رو می‌شوم."
+            }
+          ]
+        },
+        {
+          "title": "احساس بی‌ارزشی",
+          "options": [
+            {
+              "value": 0,
+              "text": "احساس می‌کنم آدم ارزشمندی هستم."
+            },
+            {
+              "value": 1,
+              "text": "خود را مثل گذشته آدم ارزشمند یا مفیدی احساس نمی‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "در مقایسه با دیگران خود را کم‌ارزش‌تر می‌دانم."
+            },
+            {
+              "value": 3,
+              "text": "احساس می‌کنم اصلاً ارزشی ندارم."
+            }
+          ]
+        },
+        {
+          "title": "کم‌توانی و کاهش انرژی",
+          "options": [
+            {
+              "value": 0,
+              "text": "میزان انرژی من مانند همیشه است."
+            },
+            {
+              "value": 1,
+              "text": "نسبت به گذشته انرژی‌ام کمتر شده است."
+            },
+            {
+              "value": 2,
+              "text": "انرژی لازم برای انجام کارهای زیاد را ندارم."
+            },
+            {
+              "value": 3,
+              "text": "انرژی انجام هیچ کاری را ندارم."
+            }
+          ]
+        },
+        {
+          "title": "تغییر در الگوی خواب",
+          "options": [
+            {
+              "value": 0,
+              "text": "در الگوی خواب من تغییری ایجاد نشده است."
+            },
+            {
+              "value": 1,
+              "text": "کمی بیش از حد معمول می‌خوابم."
+            },
+            {
+              "value": 1,
+              "text": "تا اندازه‌ای کمتر از حد معمول می‌خوابم."
+            },
+            {
+              "value": 2,
+              "text": "خیلی بیشتر از حد معمول می‌خوابم."
+            },
+            {
+              "value": 2,
+              "text": "خیلی کمتر از حد معمول می‌خوابم."
+            },
+            {
+              "value": 3,
+              "text": "بیشتر قسمت روز را می‌خوابم."
+            },
+            {
+              "value": 3,
+              "text": "صبح‌ها یک تا دو ساعت زودتر از خواب بیدار می‌شوم و دیگر نمی‌توانم بخوابم."
+            }
+          ]
+        },
+        {
+          "title": "تحریک‌پذیری",
+          "options": [
+            {
+              "value": 0,
+              "text": "بیش از حد معمول تحریک‌پذیر نیستم."
+            },
+            {
+              "value": 1,
+              "text": "بیش از حد معمول تحریک‌پذیر هستم."
+            },
+            {
+              "value": 2,
+              "text": "خیلی بیش از حد معمول تحریک‌پذیر هستم."
+            },
+            {
+              "value": 3,
+              "text": "همیشه تحریک‌پذیر هستم."
+            }
+          ]
+        },
+        {
+          "title": "تغییر در اشتها",
+          "options": [
+            {
+              "value": 0,
+              "text": "اشتهایم تغییری نکرده است."
+            },
+            {
+              "value": 1,
+              "text": "اشتهایم کمتر از حد معمول است."
+            },
+            {
+              "value": 1,
+              "text": "اشتهایم بیشتر از حد معمول است."
+            },
+            {
+              "value": 2,
+              "text": "اشتهایم خیلی کمتر از قبل است."
+            },
+            {
+              "value": 2,
+              "text": "اشتهایم خیلی بیشتر از حد معمول است."
+            },
+            {
+              "value": 3,
+              "text": "اصلاً اشتهایی ندارم."
+            },
+            {
+              "value": 3,
+              "text": "همیشه میل شدیدی به غذا خوردن دارم."
+            }
+          ]
+        },
+        {
+          "title": "مشکل در تمرکز",
+          "options": [
+            {
+              "value": 0,
+              "text": "تمرکزم به خوبی گذشته است."
+            },
+            {
+              "value": 1,
+              "text": "نمی‌توانم در حد معمول تمرکز داشته باشم."
+            },
+            {
+              "value": 2,
+              "text": "نمی‌توانم برای مدت طولانی ذهنم را روی موضوعی متمرکز سازم."
+            },
+            {
+              "value": 3,
+              "text": "احساس می‌کنم نمی‌توانم روی هیچ چیز تمرکز پیدا کنم."
+            }
+          ]
+        },
+        {
+          "title": "خستگی و احساس ناتوانی",
+          "options": [
+            {
+              "value": 0,
+              "text": "بیش از حد معمول خسته یا ناتوان نیستم."
+            },
+            {
+              "value": 1,
+              "text": "زودتر از حد معمول احساس خستگی یا ناتوانی می‌کنم."
+            },
+            {
+              "value": 2,
+              "text": "خسته‌تر یا ناتوان‌تر از آن هستم که بتوانم بسیاری از کارهایی را که قبلاً انجام می‌دادم، انجام دهم."
+            },
+            {
+              "value": 3,
+              "text": "خسته‌تر یا ناتوان‌تر از آن هستم که بتوانم بیشتر کارهایی را که قبلاً انجام می‌دادم، انجام دهم."
+            }
+          ]
+        },
+        {
+          "title": "بی‌علاقگی به امور جنسی",
+          "options": [
+            {
+              "value": 0,
+              "text": "تغییر تازه‌ای در علاقه‌ی من به امور جنسی پدید نیامده است."
+            },
+            {
+              "value": 1,
+              "text": "علاقه‌ام به امور جنسی کمتر از گذشته شده است."
+            },
+            {
+              "value": 2,
+              "text": "علاقه‌ام به امور جنسی در حال حاضر خیلی کمتر شده است."
+            },
+            {
+              "value": 3,
+              "text": "علاقه به امور جنسی را کاملاً از دست داده‌ام."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "objectRelations",
+      "instruction": "این بخش شامل جملاتی درباره‌ی نگرش شما نسبت به خودتان و دیگران در روابط است. لطفاً با هر جمله موافق یا مخالف بودن خود را مشخص کنید. تمرکز این عبارات بر تجربه‌ی کلی شما در طول زمان است، نه یک موقعیت خاص.",
+      "type": "binary",
+      "chunkSize": 9,
+      "items": [
+        "حداقل یک رابطه پایدار و رضایت بخش دارم.",
+        "همواره وقتی کسی از من خوشش نیاید، سعی بیشتر می کنم تا برای او خوب جلوه کنم.",
+        "می خواهم برای همیشه در خلوت خودم باشم.",
+        "گاهی پیش می آید که هفته ها از دیگران فاصله گرفته و با کسی صحبت نمیکنم.",
+        "معمولاً نزدیکترین کسانم را در نهایت آزرده خاطر میکنم.",
+        "اطرافیانم با من بیشتر مانند یک کودک رفتار میکنند تا یک بزرگسال.",
+        "اگر فردی را که خوب میشناسم از من دور شود، دلم برایش تنگ میشود.",
+        "من میتوانم اختلاف نظرهایی که در خانه پیش می آید را بدون برهم زدن روابط خانوادگی حل و فصل کنم.",
+        "من بینهایت نسبت به انتقاد حساس هستم.",
+        "اعمال قدرت بر دیگران، برای من لذتی پنهانی و درونی است.",
+        "گاهی برای رسیدن به خواسته ام تقریباً هر کاری انجام میدهم.",
+        "غالباً وقتی فردی که به من نزدیک است تمام توجهش را به من معطوف نمیکند، احساس آزردگی و طرد میکنم.",
+        "اگر به کسی نزدیک شوم و او غیر قابل اعتماد از آب درآید، از خودم به خاطر اوضاع پیش آمده بدم میآید.",
+        "نزدیک شدن به هرکسی برایم دشوار است.",
+        "زندگی جنسی من رضایت بخش است.",
+        "تمایل دارم همانطور که دیگران از من انتظار دارند، باشم.",
+        "هر چقدر هم که یک رابطه بد شود، من هم چنان آن را ادامه خواهم داد.",
+        "من هیچ تأثیری روی اطرافیانم ندارم.",
+        "افرادی را که نمیبینم، انگار اصلاً برایم وجود ندارند.",
+        "در زندگی ضربه های زیادی خورده ام.",
+        "کسی را دارم که بتوانم از درونیترین احساساتم با او صحبت کنم و او نیز چنین احساساتی را با من در میان بگذارد.",
+        "هرچقدر هم که برای اجتناب از مشکلات تلاش کنم، باز هم همان مشکلات در اکثر ارتباط های مهم من ظاهر میشوند.",
+        "خیلی دوستدارم با کسی به طور کامل هم عقیده باشم.",
+        "در روابط با فرد دیگر، فقط در صورتی احساس رضایت میکنم که تمام وقت با او باشم.",
+        "افراد دیگر را به درستی مورد قضاوت قرار میدهم.",
+        "روابط با جنس مخالف همیشه برای من به نحو یکسانی پیش میرود.",
+        "دیگران دائماً سعی در تحقیر من دارند.",
+        "معمولاً در تصمیم گیری های خودم، به دیگران متکی هستم.",
+        "معمولاً، از اینکه به کسی اعتماد کردم، پشیمان شده ام.",
+        "وقتی از فردی که با من نزدیک است عصبانی باشم میتوانم با او در این مورد صحبت کنم.",
+        "برای رسیدن به آنچه میخواهم، بهترین روش، به کارگرفتن دیگران است.",
+        "اغلب وقتی اطراف افرادی از جنس مخالف هستم، عصبی می شوم.",
+        "اغلب نگرانم که از کارها کنار گذاشته شوم.",
+        "احساس میکنم باید همه را راضی کنم وگرنه ممکن است مرا طرد کنند.",
+        "گاهی ماه ها با کسی حرف نمی زنم و کسی را نمی بینم.",
+        "به طرد شدن احتمالی از طرف افراد مهم در زندگیام حساس هستم.",
+        "دوست شدن با دیگران برایم کار مشکلی نیست.",
+        "نمی دانم چه طور با افراد جنس مخالف ملاقات یا صحبت کنم.",
+        "وقتی نمی توانم فردی را که به من نزدیک است به انجام کاری وادار کنم، احساس آزردگی یا عصبانیت میکنم.",
+        "تقدیر من این است که زندگی را به تنهایی سپری کنم.",
+        "مردم هیچ وقت با هم روراست نیستند.",
+        "من زیاد برای روابطم مایه میگذارم و به همان میزان هم دریافت میکنم.",
+        "از ملاقات یا صحبت با افراد جنس مخالف خجالت میکشم.",
+        "برای من مهمترین چیز در یک رابطه، اعمال قدرت بر طرف مقابل است.",
+        "معتقدم که یک مادر خوب باید همیشه بچه هایش را خشنود سازد."
+      ],
+      "options": [
+        {
+          "value": 1,
+          "label": "درست"
+        },
+        {
+          "value": 0,
+          "label": "نادرست"
+        }
+      ],
+      "reverse": [
+        1,
+        15,
+        21,
+        30,
+        37,
+        42
+      ],
+      "subscales": {
+        "egocentric": [
+          4,
+          5,
+          6,
+          9,
+          10,
+          11,
+          19,
+          22,
+          24,
+          27,
+          29,
+          31,
+          35,
+          39,
+          40,
+          41,
+          44
+        ],
+        "alienation": [
+          1,
+          15,
+          20,
+          21,
+          22,
+          29,
+          30,
+          33,
+          37,
+          41,
+          42
+        ],
+        "insecureAttachment": [
+          2,
+          7,
+          12,
+          13,
+          16,
+          20,
+          23,
+          28,
+          33,
+          34,
+          36
+        ],
+        "socialIncompetence": [
+          6,
+          14,
+          18,
+          27,
+          28,
+          31,
+          32,
+          37,
+          38,
+          43
+        ]
+      }
+    },
+    {
+      "id": "emotionalSchemas",
+      "instruction": "می‌خواهیم بدانیم که شما با احساسات و هیجانات خود چه‌گونه روبه‌رو می‌شوید؛ برای مثال چه‌گونه با خشم، غم، اضطراب یا احساسات جنسی مواجه می‌شوید. همه‌ی ما در چگونگی پرداختن به این احساسات رفتارهای متفاوتی داریم، بنابراین پاسخ درست یا غلطی وجود ندارد. لطفاً هر جمله را با دقت مطالعه کنید و بیان کنید که در یک ماه گذشته چه‌گونه با این احساسات مواجه شده‌اید.",
+      "type": "linear",
+      "chunkSize": 7,
+      "items": [
+        "اغلب فکر می‌کنم واکنش‌های هیجانی من با آنچه دیگران تجربه می‌کنند متفاوت است.",
+        "داشتن بعضی احساسات نادرست است.",
+        "چیزهایی درباره‌ی خودم هست که اصلاً درک نمی‌کنم.",
+        "باور دارم مهم است به خودم اجازه بدهم گریه کنم تا احساساتم را بیرون بریزم.",
+        "اگر اجازه بدهم بعضی از این احساسات را تجربه کنم، می‌ترسم کنترل خود را از دست بدهم.",
+        "دیگران احساساتم را درک می‌کنند و می‌پذیرند.",
+        "احساساتم برای خودم قابل فهم نیستند.",
+        "اگر دیگران تغییر کنند، حالم خیلی بهتر می‌شود.",
+        "گاهی می‌ترسم اگر به خودم اجازه‌ی تجربه‌ی یک احساس شدید را بدهم، آن احساس از بین نرود.",
+        "از احساساتم خجالت می‌کشم.",
+        "چیزهایی که دیگران را ناراحت می‌کند، من را ناراحت نمی‌کند.",
+        "هیچ‌کس واقعاً به احساسات من اهمیت نمی‌دهد.",
+        "برایم مهم است که به جای حساس بودن و پذیرش احساساتم، منطقی و عمل‌گرا باشم.",
+        "وقتی حالم گرفته است، سعی می‌کنم به چیزهای مهم‌تر زندگی و ارزش‌هایم فکر کنم.",
+        "احساس می‌کنم می‌توانم احساساتم را آشکارا بیان کنم.",
+        "اغلب به خودم می‌گویم: «چه مشکلی دارم؟»",
+        "نگرانم نتوانم احساساتم را کنترل کنم.",
+        "باید مراقب بود بعضی احساسات را تجربه نکرد.",
+        "احساسات شدید فقط مدت کوتاهی دوام دارند.",
+        "اغلب از نظر هیجانی «بی‌حس» می‌شوم؛ انگار هیچ احساسی ندارم.",
+        "دیگران باعث می‌شوند احساسات ناخوشایند داشته باشم.",
+        "وقتی حالم گرفته است، تنها می‌نشینم و زیاد به بد بودن حالم فکر می‌کنم.",
+        "دوست دارم درباره‌ی احساسم نسبت به دیگران کاملاً مطمئن و قطعی باشم.",
+        "احساساتم را می‌پذیرم.",
+        "فکر می‌کنم احساساتی مشابه دیگران دارم.",
+        "ارزش‌های والاتری وجود دارد که برای رسیدن به آن‌ها تلاش می‌کنم.",
+        "فکر می‌کنم تقریباً در همه چیز منطقی و عقلانی بودن مهم است.",
+        "دوست دارم درباره‌ی احساسم نسبت به خودم کاملاً مطمئن و قطعی باشم."
+      ],
+      "min": 1,
+      "max": 6,
+      "minLabel": "اصلاً در مورد من صدق نمی‌کند",
+      "maxLabel": "کاملاً در مورد من صدق می‌کند",
+      "dimensions": {
+        "invalidation": {
+          "items": [
+            6,
+            12
+          ],
+          "reverse": [
+            6
+          ]
+        },
+        "incomprehensibility": {
+          "items": [
+            3,
+            7
+          ],
+          "reverse": []
+        },
+        "guilt": {
+          "items": [
+            2,
+            10
+          ],
+          "reverse": []
+        },
+        "simplistic": {
+          "items": [
+            23,
+            28
+          ],
+          "reverse": []
+        },
+        "devalued": {
+          "items": [
+            14,
+            26
+          ],
+          "reverse": [
+            14,
+            26
+          ]
+        },
+        "lossControl": {
+          "items": [
+            5,
+            17
+          ],
+          "reverse": []
+        },
+        "numbness": {
+          "items": [
+            11,
+            20
+          ],
+          "reverse": []
+        },
+        "overlyRational": {
+          "items": [
+            13,
+            27
+          ],
+          "reverse": []
+        },
+        "duration": {
+          "items": [
+            9,
+            19
+          ],
+          "reverse": [
+            19
+          ]
+        },
+        "lowConsensus": {
+          "items": [
+            1,
+            25
+          ],
+          "reverse": [
+            25
+          ]
+        },
+        "nonAcceptance": {
+          "items": [
+            24,
+            18
+          ],
+          "reverse": [
+            24
+          ]
+        },
+        "rumination": {
+          "items": [
+            22,
+            16
+          ],
+          "reverse": []
+        },
+        "lowExpression": {
+          "items": [
+            4,
+            15
+          ],
+          "reverse": [
+            4,
+            15
+          ]
+        },
+        "blame": {
+          "items": [
+            8,
+            21
+          ],
+          "reverse": []
+        }
+      }
+    },
+    {
+      "id": "characterPatterns",
+      "instruction": "در این بخش مجموعه‌ای از عبارات درباره‌ی شیوه‌ی معمول شما در تجربه‌ی احساسات، ارتباط با دیگران و مواجهه با موقعیت‌های مختلف آمده است. لطفاً موافق یا مخالف بودن خود با هر عبارت را مشخص کنید.",
+      "type": "binary",
+      "chunkSize": 10,
+      "items": [
+        "من بیشتر از احساساتم، نسبت به افکارم آگاهی دارم.",
+        "حتی زمانی که موفق هستم، پذیرش این‌که فردی شایسته هستم برایم دشوار است.",
+        "احساس نمی‌کنم بتوانم روی کسانی که به آن‌ها دلبسته‌ام، حساب باز کنم که قابل‌اعتماد و قابل‌پیش‌بینی باشند.",
+        "دیگران من را آدم حواس‌پرتی می‌دانند.",
+        "جدایی‌ها همیشه برایم دشوار بوده‌اند (مثلاً شروع مدرسه، رفتن به دبیرستان، ترک خانه، فارغ‌التحصیلی، ترک شغل یا رابطه).",
+        "اغلب وقتی فکر می‌کنم شریک (عاطفی)ام ممکن است شخص دیگری را بیشتر از من دوست بدارد، احساس حسادت می‌کنم.",
+        "خانواده‌ام به استعدادها و توانایی‌های خاصم افتخار می‌کنند.",
+        "ترک رابطه یا شغلی که در آن احساس مورد انتقاد واقع شدن، طرد شدگی، بی‌ارزشی یا آسیب‌دیدگی می‌کنم، برایم بسیار سخت است.",
+        "تمایل دارم که مشکلاتم با دیگران را تماماً تقصیر خودم بدانم.",
+        "وقتی احساس می‌کنم مورد انتقاد قرار گرفته‌ام، بسیار عصبانی می‌شوم.",
+        "تصمیم‌گیری برایم بسیار دشوار است.",
+        "گذراندن زمان به تنهایی برای من بسیار سخت است.",
+        "خلق‌وخوهای بسیار شدیدی دارم که به سرعت تغییر می‌کنند.",
+        "بیشتر زمانم را صرف خیال‌پردازی و رویاورزی می‌کنم.",
+        "احساس می‌کنم یا بسیار مهم هستم یا بسیار بی‌ارزش.",
+        "به من گفته شده که رفتارم اغواگرانه است و این موضوع برایم غافلگیرکننده بوده، زیرا چنین قصدی نداشته‌ام.",
+        "سخت تلاش می‌کنم که «هرگز» اشتباه نکنم.",
+        "اغلب احساس وحشت می‌کنم، مانند «نوزادی تنها در فضا».",
+        "زندگی را مانند یک ناظر عینی و بی‌طرف تجربه می‌کنم.",
+        "به عنوان فردی عجیب و غریب توصیف شده‌ام.",
+        "هیچ ایده‌ای ندارم که واقعاً چه کسی هستم، چه می‌خواهم یا چه چیزی در زندگی واقعاً برایم مهم است.",
+        "با وجود این‌که قرار گرفتن در موقعیت‌های سه‌نفره برایم دشوار است (مانند زمانی که دوست یا شریک‌ عاطفی‌ام با شخص ثالثی صمیمی می‌شود و احساس می‌کنم کنار گذاشته‌ شده‌ام)، اما اغلب خودم را در چنین شرایطی می‌یابم.",
+        "وقتی دستاوردهایم را کنار می‌گذارم، واقعاً مطمئن نیستم که چه کسی هستم.",
+        "عذرخواهی کردن برایم بسیار دشوار است.",
+        "هرچند هیچ‌وقت اقدام به خودکشی نکرده‌ام یا قصد آن را نداشته‌ام، اما گاهی خواسته‌ام که برای پایان دادن به دردهایم بمیرم.",
+        "به من گفته شده که اهل جر و بحث هستم.",
+        "نسبت به خودکفایی و استقلال شدیدم، در خفا احساس غرور می‌کنم.",
+        "اغلب احساس می‌کنم از نیازها و احساساتم جدا افتاده‌ام",
+        "به شدت خجالتی هستم.",
+        "هنگام خشم یا افسردگی، گاهی کارهایی کرده‌ام که به خودم آسیب فیزیکی زده‌ام (مثل اقدام به خودکشی یا خودزنی).",
+        "تمایل دارم حتی بر سر مسائل کوچک با مردم درگیر شوم، چون دوست ندارم احساس کنم تحت کنترل دیگران هستم (یعنی کارهایی را انجام دهم که نمی‌خواهم انجام دهم یا با آن‌ها موافق نیستم).",
+        "به من گفته شده که فردی نمایشی/دراماتیک هستم.",
+        "به میزان زیادی اطمینان خاطر نیاز دارم.",
+        "به طور کلی روابط من کوتاه‌مدت و شدید هستند.",
+        "می‌ترسم که مردم ته قلب‌شان، مرا به‌خاطر کارهایی که برایشان انجام می‌دهم دوست داشته باشند، نه به‌خاطر خود واقعی‌ام.",
+        "والدینم بیشترین توجه را زمانی به من نشان می‌دادند که مشکلی داشتم (مثل مریض بودن یا بدرفتاری).",
+        "برخلاف نیات اولیه‌ام، معمولاً خودم را در رابطه در حال مراقبت یا مسئولیت‌پذیری برای طرف مقابل می‌یابم.",
+        "برایم مهم است که شریک (عاطفی)ام جذاب، باهوش، قدردان و شنونده‌ی خوبی باشد.",
+        "هنگام توصیه گرفتن از دیگران، بین تمایل به راضی کردن‌شان (قبول توصیه‌ی آن‌ها) و تمایل به مستقل بودن (این که تصمیم خودم را بگیرم) دچار تعارض می‌شوم.",
+        "اغلب احساس کسالت و پوچی درونی می‌کنم.",
+        "در کودکی به صورت شدید مورد آزار جسمی/جنسی قرار گرفته‌ام.",
+        "اغلب وحشت دارم که دیگران مرا ترک خواهند کرد.",
+        "ظاهر فیزیکی‌ام برایم بسیار مهم است.",
+        "از غذا خوردن به آن اندازه که دیگران از آن لذت می‌برند، لذت نمی‌برم (یعنی برای زندگی کردن غذا می‌خورم، نه این‌که برای غذا خوردن زندگی کنم).",
+        "تمایل دارم کارها را به صورت افراطی انجام دهم (مثلاً یا بسیار مرتب هستم یا بسیار نامرتب؛ یا بسیار منطقی هستم یا بسیار عصبی).",
+        "فانتزی‌های جنسی من تقریباً همیشه درباره‌ی انجام کارهای ممنوعه است.",
+        "از دست دادن رابطه با کسی که دوستش دارم، برایم از هر چیز دیگری دردناک‌تر است.",
+        "گاهی تجربیات عجیب یا غیرمعمول داشته‌ام (مثل دیدن یا شنیدن چیزهای غیرواقعی یا باور به چیزهایی که دیگران به آن‌ها باور ندارند).",
+        "تنها زندگی می‌کنم و روابط (اجتماعی‌) اندکی دارم، و گاهی اصلاً رابطه‌ای ندارم.",
+        "از دیگران انتظار زیادی دارم و «نه» شنیدن برایم سخت است؛ برای رسیدن به خواسته‌ام پافشاری می‌کنم و اگر کسی همراه نشود، به راحتی‌ قابل جایگزینی است.",
+        "در کودکی، وقتی تنها بازی می‌کردم یا با بچه‌های دیگر دوست می‌شدم، مادرم نسبت به من رفتار طردکننده‌ای داشت.",
+        "در خانواده‌ام یا نقش «سپر بلا» را داشتم (خانواده‌ام فکر می‌کردند من «بد» یا «از دست رفته» هستم) یا نقش «مراقب» (یعنی محرم اسرار والدینم بودم، مسئولیت‌هایی فراتر از سنم روی دوشم گذاشته شده بود).",
+        "وقتی با کسی که شدیداً او را تحسین کرده و با او همذات‌پنداری می‌کنم (مثل دوست، معلم، شریک عاطفی) در رابطه باشم، خوشحال‌ترین هستم.",
+        "کار و بهره‌وری را به تفریح و گذران وقت با دیگران ترجیح می‌دهم.",
+        "بیشتر احساسی هستم تا منطقی و تحلیلی.",
+        "استانداردهای اخلاقی والایی دارم و تلاش می‌کنم باوجدان باشم.",
+        "احساس می‌کنم از دیگران جدا و گسسته هستم.",
+        "زندگی اغلب برایم بیهوده، بی‌معنی و غیرواقعی به‌نظر می‌رسد.",
+        "در روابط جنسی، تمایل دارم به افرادی جذب شوم که در ابتدا مشخصاً دوست‌داشتنی، رمانتیک و/یا اغواگر جلوه می‌کنند اما بعد نسبت به من، اغلب رفتاری ظالمانه و طردکننده در پیش می‌گیرند.",
+        "گاهی احساس می‌کنم مجبورم اهدافم را دنبال کنم، حتی اگر بدانم به نفعم نیست.",
+        "در حالی‌که مردم مرا دوست‌داشتنی و سرگرم‌کننده می‌یابند، من روابط صمیمانه‌ای با دوستانم که برایم مهم باشند و بتوانم به آن‌ها تکیه کنم، ندارم.",
+        "نسبت به فانتزی‌ها و تمایلات جنسی‌ام احساس گناه و/یا شرم می‌کنم.",
+        "چیزها برای من سفید و سیاه هستند. وقتی که دوست دارم و احساس می‌کنم توسط کسی حمایت می‌شوم، فکر می‌کنم که آن‌ها کاملاً بی‌نقص هستند. وقتی آن‌ها ناامیدم می‌کنند و من از آن‌ها عصبانی می‌شوم، برایم خیلی سخت است که هیچ چیز خوبی از آن‌ها به‌ خاطر بیاورم.",
+        "اگر حق انتخاب داشتم، جست‌وجوی معنویت را به لذت‌های زندگی‌ روزمره ترجیح می‌دادم.",
+        "برایم بسیار مهم است که دیگران کارها را دقیقاً همان‌طور که می‌گویم انجام دهند، به ویژه وقتی مطمئنم روش من درست است.",
+        "به من گفته شده که رفتارم معصومانه یا کودکانه است.",
+        "اغلب با احساس عزت نفس پایین دست‌وپنجه نرم می‌کنم؛ به‌خصوص وقتی که فردی که برایم مهم است، از من انتقاد کرده یا عصبانی می‌شود.",
+        "آن‌چه که یک فرد مستعد در این جهان می‌تواند به آن دست پیدا کند، نامحدود است.",
+        "وقتی برای دیگران کاری انجام می‌دهم که خودم نمی‌خواهم، احساس می‌کنم بخشی از خودم را از دست می‌دهم.",
+        "یک یا هر دوی والدین من (یا خواهر/برادرهایم) در رفتارشان نسبت به من کاملاً غیرقابل‌پیش‌بینی بودند (یعنی از بسیار دوست‌داشتنی، متوجه، و/یا سرگرم‌کننده برای بودن به عبوس، منتقد، کناره‌گیر یا حتی آزاردهنده تغییر می‌کردند).",
+        "گاهی با این‌که منطقی صحبت می‌کنم، دیگران دنبال کردن افکارم را دشوار می‌یابند.",
+        "والد هم‌جنسم به نحوی نسبت به من سرد و بی‌علاقه بود، اما والد جنس مخالفم، (نسبت به من) گرم‌تر، درگیرتر و اغلب از نظر دیگران فردی بامزه، جذاب یا حتی تا حدی معاشرتی بود.",
+        "گاهی احساس کرده‌ام که حق وجود داشتن ندارم.",
+        "تمایل دارم به تصویر کلی نگاه کنم؛ من اصلاً آدم جزئیات نیستم.",
+        "در حالی که فوران‌های هیجانی دارم، برای مدتی طولانی عصبانی نمی‌مانم و قادرم از شخصی که از دست او عصبانی هستم، عذرخواهی کرده یا او را ببخشم.",
+        "بر حق بودن (خصوصاً وقتی مورد تایید دیگران قرار گیرد) برایم بسیار مهم است.",
+        "مردم معمولاً مرا دوست دارند، چون می‌دانم چه‌طور به آن‌ها احساس ویژه و مهم بودن بدهم.",
+        "تمایل دارم در ابتدا افراد را تحسین کنم و سپس به شدت از آن‌ها ناامید شوم.",
+        "دوست دارم در مکانی دورافتاده و آرام، به تنهایی زندگی کنم.",
+        "جدایی از کسانی که به آن‌ها دلبسته‌ام برایم تقریباً غیرقابل‌تحمل است.",
+        "گاهی وقتی فکر می‌کنم دارم نهایت تلاشم را می‌کنم که مهربان و همکار باشم، دیگران از من کلافه‌ می‌شوند و من دلیل آن را نمی‌فهمم.",
+        "اغلب در زندگی‌ام با دیگران احساس «یکی بودن» دارم. وقتی چنین احساسی دارم، هم دوستش دارم و هم از آن می‌ترسم.",
+        "احساسی که بیش از همه تجربه می‌کنم، ترکیبی از خشم و تنفر از خود است.",
+        "مصالحه کردن برایم سخت است؛ به‌خصوص وقتی که می‌دانم حق با من است.",
+        "تمایل به توجه به جزئیات دارم و گاهی اوقات می‌توانم تصویر بزرگ‌تر را از دست بدهم.",
+        "تمایل دارم تا حدی تکانشی عمل کنم و بعداً درباره‌ی آن فکر کنم؛ هر چند معمولاً آسیب جدی نمی‌بینم.",
+        "باور ندارم دیگران به من احترام بگذارند یا به من علاقه‌مند شوند؛ مگر زمانی که بی‌نقص باشم (مثلاً بسیار باهوش، فوق‌العاده جذاب، لاغر یا موفق).",
+        "باور دارم اگر فقط بتوانم «کار درست» برای انجام دادن را پیدا کنم، می‌توانم آن‌چه را از والدین یا شریک (عاطفی)ام نیاز دارم، به دست بیاورم.",
+        "مردم مرا فردی خونسرد و غیرصمیمی تجربه می‌کنند.",
+        "اغلب لیست‌هایی را برای سازمان‌بخشی به فعالیت‌هایم درست می‌کنم اما در تکمیل موارد لیست طبق برنامه، مشکل دارم."
+      ],
+      "options": [
+        {
+          "value": 1,
+          "label": "درست"
+        },
+        {
+          "value": 0,
+          "label": "نادرست"
+        }
+      ],
+      "subscales": {
+        "schizoid": [
+          4,
+          14,
+          19,
+          20,
+          27,
+          28,
+          29,
+          44,
+          49,
+          57,
+          58,
+          64,
+          73,
+          79,
+          89
+        ],
+        "hysteroid": [
+          5,
+          12,
+          13,
+          18,
+          21,
+          30,
+          34,
+          41,
+          42,
+          48,
+          51,
+          63,
+          80,
+          82,
+          83
+        ],
+        "narcissistic": [
+          7,
+          10,
+          15,
+          23,
+          24,
+          38,
+          40,
+          43,
+          50,
+          53,
+          68,
+          69,
+          77,
+          78,
+          87
+        ],
+        "masochistic": [
+          3,
+          8,
+          9,
+          25,
+          35,
+          36,
+          37,
+          39,
+          47,
+          52,
+          59,
+          67,
+          70,
+          81,
+          88
+        ],
+        "obsessiveCompulsive": [
+          1,
+          11,
+          17,
+          26,
+          31,
+          45,
+          54,
+          56,
+          60,
+          65,
+          71,
+          76,
+          84,
+          85,
+          90
+        ],
+        "hysterical": [
+          2,
+          6,
+          16,
+          22,
+          32,
+          33,
+          46,
+          55,
+          61,
+          62,
+          66,
+          72,
+          74,
+          75,
+          86
+        ]
+      }
+    }
+  ]
+};
+
+</script>
+  <script>
+(() => {
+  "use strict";
+
+  const survey = window.SURVEY_DATA;
+  const config = window.SURVEY_CONFIG || {};
+  const app = document.getElementById("app");
+  const headerMeta = document.getElementById("headerMeta");
+  const sectionCounter = document.getElementById("sectionCounter");
+  const answeredCounter = document.getElementById("answeredCounter");
+  const progressWrap = document.getElementById("progressWrap");
+  const progressBar = document.getElementById("progressBar");
+  const STORAGE_KEY = "tehran-personality-research-v1";
+  const TOTAL_QUESTIONS = survey.sections.reduce((sum, section) => sum + (section.items?.length || section.groups?.length || 0), 0);
+
+  const sectionById = Object.fromEntries(survey.sections.map(section => [section.id, section]));
+
+  const makeId = () => {
+    if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+    return `r-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  };
+
+  const freshState = () => ({
+    responseId: makeId(),
+    createdAt: new Date().toISOString(),
+    view: "intro",
+    order: shuffle(survey.sections.map(section => section.id)),
+    sectionIndex: 0,
+    pageIndex: 0,
+    answers: {},
+    demographics: {},
+    finished: false,
+    submissionAttempted: false
+  });
+
+  let state = loadState();
+
+  function shuffle(items) {
+    const result = [...items];
+    for (let i = result.length - 1; i > 0; i -= 1) {
+      const random = new Uint32Array(1);
+      if (window.crypto?.getRandomValues) {
+        window.crypto.getRandomValues(random);
+      } else {
+        random[0] = Math.floor(Math.random() * 2 ** 32);
+      }
+      const j = random[0] % (i + 1);
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  }
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+      const validOrder = saved?.order?.length === survey.sections.length && saved.order.every(id => sectionById[id]);
+      if (saved && validOrder) return saved;
+    } catch (error) {
+      console.warn("Could not restore session state", error);
+    }
+    return freshState();
+  }
+
+  function persist() {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (error) {
+      console.warn("Session storage is unavailable; progress will not survive a refresh.", error);
+    }
+  }
+
+  function answerKey(sectionId, itemIndex) {
+    return `${sectionId}.${itemIndex}`;
+  }
+
+  function getAnswer(sectionId, itemIndex) {
+    return state.answers[answerKey(sectionId, itemIndex)];
+  }
+
+  function setAnswer(sectionId, itemIndex, value) {
+    state.answers[answerKey(sectionId, itemIndex)] = Number(value);
+    persist();
+    updateHeader();
+  }
+
+  function answeredCount() {
+    return Object.keys(state.answers).length;
+  }
+
+  function updateHeader() {
+    const isIntro = state.view === "intro";
+    const isResult = state.view === "results";
+    headerMeta.hidden = isIntro || isResult;
+    progressWrap.hidden = isIntro;
+
+    const progress = isResult ? 100 : Math.round((answeredCount() / TOTAL_QUESTIONS) * 100);
+    progressBar.style.width = `${progress}%`;
+
+    if (state.view === "demographics") {
+      sectionCounter.textContent = "اطلاعات جمعیت‌شناختی";
+    } else if (state.view === "questions") {
+      sectionCounter.textContent = `بخش ${toFa(state.sectionIndex + 1)} از ${toFa(state.order.length)}`;
+    }
+    answeredCounter.textContent = `${toFa(answeredCount())} از ${toFa(TOTAL_QUESTIONS)} پاسخ`;
+  }
+
+  function toFa(value) {
+    return String(value).replace(/\d/g, digit => "۰۱۲۳۴۵۶۷۸۹"[digit]);
+  }
+
+  function scrollTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function render() {
+    updateHeader();
+    if (state.finished || state.view === "results") {
+      state.view = "results";
+      renderResults();
+      return;
+    }
+    if (state.view === "intro") renderIntro();
+    else if (state.view === "demographics") renderDemographics();
+    else renderQuestionPage();
+  }
+
+  function renderIntro() {
+    const ownerBits = [config.institution, config.researcherName && `پژوهشگر: ${config.researcherName}`, config.ethicsCode && `کد اخلاق: ${config.ethicsCode}`, config.researcherContact && `راه ارتباطی: ${config.researcherContact}`].filter(Boolean);
+    const externalButton = config.googleFormUrl
+      ? `<a class="btn btn-secondary" href="${escapeAttr(config.googleFormUrl)}" target="_blank" rel="noopener">تکمیل در فرم بیرونی</a>`
+      : "";
+
+    app.innerHTML = `
+      <section class="hero">
+        <span class="eyebrow">پژوهش دانشگاهی · بی‌نام و داوطلبانه</span>
+        <h1>${survey.meta.title}</h1>
+        <p class="lead">${survey.meta.intro}</p>
+
+        <div class="intro-grid">
+          <article class="mini-card"><strong>حدود ۲۰ دقیقه</strong><span>پاسخ‌گویی مرحله‌به‌مرحله و قابل توقف است.</span></article>
+          <article class="mini-card"><strong>بدون نام و ایمیل</strong><span>هیچ شناسه‌ی مستقیمی از شما پرسیده نمی‌شود.</span></article>
+          <article class="mini-card"><strong>بازخورد شخصی</strong><span>در پایان یک جمع‌بندی غیرتشخیصی دریافت می‌کنید.</span></article>
+        </div>
+
+        <div class="consent-box">
+          <label class="check-row">
+            <input id="consent" type="checkbox" />
+            <span>متن بالا را خوانده‌ام، ۱۸ تا ۳۰ سال دارم، دانشجوی یکی از دانشگاه‌های استان تهران هستم و با شرکت داوطلبانه در این پژوهش موافقم.</span>
+          </label>
+          ${ownerBits.length ? `<p class="owner-meta">${ownerBits.join(" · ")}</p>` : ""}
+          <div id="introError" class="inline-error">برای شروع، تأیید آگاهانه‌ی بالا لازم است.</div>
+          <div class="nav-row">
+            <button id="startBtn" class="btn btn-primary">شروع پرسش‌نامه <span aria-hidden="true">←</span></button>
+            ${externalButton}
+          </div>
+        </div>
+        <p class="owner-meta">این ابزار برای پژوهش و خودبازتابی طراحی شده است و تشخیص پزشکی یا روان‌شناختی ارائه نمی‌کند.</p>
+      </section>`;
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      if (!document.getElementById("consent").checked) {
+        document.getElementById("introError").classList.add("show");
+        return;
+      }
+      state.view = "demographics";
+      persist();
+      render();
+      scrollTop();
+    });
+  }
+
+  function renderDemographics() {
+    const d = state.demographics;
+    app.innerHTML = `
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">پیش از شروع بخش‌ها</div>
+            <h2>اطلاعات جمعیت‌شناختی</h2>
+            <p class="section-description">${survey.meta.demographicIntro}</p>
+          </div>
+          <span class="page-chip">بی‌نام</span>
+        </div>
+
+        <form id="demographicForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="age">سن</label>
+              <input id="age" name="age" type="number" min="18" max="30" inputmode="numeric" value="${escapeAttr(d.age ?? "")}" required />
+              <small>عدد بین ۱۸ تا ۳۰</small>
+            </div>
+
+            <fieldset class="field">
+              <legend>جنسیت</legend>
+              <div class="option-row">
+                ${radioPill("gender", "woman", "زن", d.gender)}
+                ${radioPill("gender", "man", "مرد", d.gender)}
+              </div>
+            </fieldset>
+
+            <div class="field full">
+              <label for="university">دانشگاه محل تحصیل</label>
+              <input id="university" name="university" type="text" maxlength="120" autocomplete="off" value="${escapeAttr(d.university ?? "")}" required />
+            </div>
+
+            <div class="field">
+              <label for="degree">مقطع تحصیلی</label>
+              ${selectField("degree", ["کارشناسی", "کارشناسی ارشد", "دکترا"], d.degree)}
+            </div>
+
+            <div class="field">
+              <label for="parentEducation">بالاترین مدرک تحصیلی بین پدر و مادر شما چیست؟</label>
+              ${selectField("parentEducation", ["زیر دیپلم", "دیپلم", "کارشناسی", "کارشناسی ارشد", "دکترا یا بالاتر", "نمی‌دانم"], d.parentEducation)}
+            </div>
+
+            <fieldset class="field full">
+              <legend>تصور کنید نردبانی ۱۰ پله‌ای وجود دارد که موقعیت اجتماعی-اقتصادی خانواده‌ها را از پایین به بالا نشان می‌دهد؛ با توجه به خانواده‌ای که در آن بزرگ شده‌اید، در کدام پله قرار می‌گیرید؟</legend>
+              <div class="ladder">
+                ${Array.from({length:10}, (_, i) => radioPill("socioeconomicLadder", String(i + 1), toFa(i + 1), String(d.socioeconomicLadder ?? ""))).join("")}
+              </div>
+              <div class="ladder-labels"><span>پایین‌ترین جایگاه</span><span>بالاترین جایگاه</span></div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend>آیا تا کنون سابقه‌ی اقدام به خودکشی داشته‌اید؟</legend>
+              <div class="option-row">
+                ${radioPill("suicideHistory", "yes", "بله", d.suicideHistory)}
+                ${radioPill("suicideHistory", "no", "خیر", d.suicideHistory)}
+              </div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend>آیا تا کنون سابقه‌ی اعتیاد به مواد مخدر، الکل یا دارو داشته‌اید؟</legend>
+              <div class="option-row">
+                ${radioPill("addictionHistory", "yes", "بله", d.addictionHistory)}
+                ${radioPill("addictionHistory", "no", "خیر", d.addictionHistory)}
+              </div>
+            </fieldset>
+          </div>
+          <div id="demoError" class="inline-error">لطفاً همه‌ی اطلاعات این صفحه را تکمیل کنید. سن باید بین ۱۸ تا ۳۰ سال باشد.</div>
+          <div class="nav-row">
+            <button type="button" id="demoBack" class="btn btn-secondary"><span aria-hidden="true">→</span> بازگشت</button>
+            <button type="submit" class="btn btn-primary">ورود به بخش اول <span aria-hidden="true">←</span></button>
+          </div>
+        </form>
+      </section>`;
+
+    document.getElementById("demoBack").addEventListener("click", () => {
+      saveDemographics(false);
+      state.view = "intro";
+      persist();
+      render();
+      scrollTop();
+    });
+
+    document.getElementById("demographicForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (!saveDemographics(true)) return;
+      state.view = "questions";
+      state.sectionIndex = 0;
+      state.pageIndex = 0;
+      persist();
+      render();
+      scrollTop();
+    });
+  }
+
+  function saveDemographics(requireComplete) {
+    const form = document.getElementById("demographicForm");
+    if (!form) return true;
+    const formData = new FormData(form);
+    const next = Object.fromEntries(formData.entries());
+    state.demographics = { ...state.demographics, ...next };
+    persist();
+
+    const age = Number(next.age);
+    const required = ["age", "gender", "university", "degree", "parentEducation", "socioeconomicLadder", "suicideHistory", "addictionHistory"];
+    const complete = required.every(key => String(next[key] ?? "").trim()) && Number.isInteger(age) && age >= 18 && age <= 30;
+    if (requireComplete && !complete) {
+      document.getElementById("demoError").classList.add("show");
+      return false;
+    }
+    return true;
+  }
+
+  function radioPill(name, value, label, selected) {
+    const checked = String(selected ?? "") === String(value) ? "checked" : "";
+    return `<label class="option-pill"><input type="radio" name="${escapeAttr(name)}" value="${escapeAttr(value)}" ${checked} />${label}</label>`;
+  }
+
+  function selectField(name, options, selected) {
+    return `<select id="${name}" name="${name}" required>
+      <option value="">انتخاب کنید</option>
+      ${options.map(option => `<option value="${escapeAttr(option)}" ${selected === option ? "selected" : ""}>${option}</option>`).join("")}
+    </select>`;
+  }
+
+  function renderQuestionPage() {
+    const sectionId = state.order[state.sectionIndex];
+    const section = sectionById[sectionId];
+    const totalItems = section.items?.length || section.groups.length;
+    const totalPages = Math.ceil(totalItems / section.chunkSize);
+    state.pageIndex = Math.min(state.pageIndex, totalPages - 1);
+    const start = state.pageIndex * section.chunkSize;
+    const end = Math.min(start + section.chunkSize, totalItems);
+
+    const cards = [];
+    for (let index = start; index < end; index += 1) {
+      cards.push(renderQuestionCard(section, index));
+    }
+
+    app.innerHTML = `
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">بخش ${toFa(state.sectionIndex + 1)} از ${toFa(state.order.length)}</div>
+            <h2>لطفاً بر اساس تجربه‌ی واقعی خود پاسخ دهید</h2>
+            <p class="section-description">${section.instruction}</p>
+          </div>
+          <span class="page-chip">صفحه ${toFa(state.pageIndex + 1)} از ${toFa(totalPages)}</span>
+        </div>
+        <div class="question-list">${cards.join("")}</div>
+        <div id="pageError" class="inline-error">برای ادامه، لطفاً به همه‌ی عبارت‌های این صفحه پاسخ دهید.</div>
+        <div class="nav-row">
+          <button id="pageBack" class="btn btn-secondary"><span aria-hidden="true">→</span> بازگشت</button>
+          <button id="pageNext" class="btn btn-primary">${nextButtonLabel(totalPages)} <span aria-hidden="true">←</span></button>
+        </div>
+      </section>`;
+
+    document.querySelectorAll("input[data-answer]").forEach(input => {
+      input.addEventListener("change", event => {
+        const { sectionId: id, itemIndex } = event.target.dataset;
+        setAnswer(id, Number(itemIndex), event.target.value);
+        event.target.closest(".question-card")?.classList.remove("is-missing");
+      });
+    });
+
+    document.getElementById("pageBack").addEventListener("click", previousPage);
+    document.getElementById("pageNext").addEventListener("click", () => nextPage(section, start, end, totalPages));
+  }
+
+  function nextButtonLabel(totalPages) {
+    if (state.pageIndex < totalPages - 1) return "ادامه";
+    if (state.sectionIndex < state.order.length - 1) return "بخش بعدی";
+    return "مشاهده‌ی نتیجه";
+  }
+
+  function renderQuestionCard(section, index) {
+    const current = getAnswer(section.id, index);
+    const inputName = `answer-${section.id}-${index}`;
+    const data = `data-answer data-section-id="${section.id}" data-item-index="${index}"`;
+
+    if (section.type === "grouped") {
+      const group = section.groups[index];
+      return `<article class="question-card" data-card-index="${index}">
+        <div class="question-topic">${group.title}</div>
+        <div class="group-options">
+          ${group.options.map((option, optionIndex) => `
+            <label class="group-option">
+              <input type="radio" name="${inputName}" value="${option.value}" ${Number(current) === option.value ? "checked" : ""} ${data} />
+              <span class="score-dot" aria-hidden="true">${toFa(option.value)}</span>
+              <span>${option.text}</span>
+            </label>`).join("")}
+        </div>
+      </article>`;
+    }
+
+    const text = section.items[index];
+    if (section.type === "linear") {
+      const points = Array.from({length: section.max - section.min + 1}, (_, i) => section.min + i);
+      return `<article class="question-card" data-card-index="${index}">
+        <div class="question-text">${text}</div>
+        <div class="linear-scale">
+          <div class="scale-points" style="--points:${points.length}">
+            ${points.map(value => `<label class="scale-point"><input type="radio" name="${inputName}" value="${value}" ${Number(current) === value ? "checked" : ""} ${data} /><span>${toFa(value)}</span></label>`).join("")}
+          </div>
+          <div class="scale-endpoints"><span>${section.minLabel}</span><span>${section.maxLabel}</span></div>
+        </div>
+      </article>`;
+    }
+
+    return `<article class="question-card" data-card-index="${index}">
+      <div class="question-text">${text}</div>
+      <div class="option-row">
+        ${section.options.map(option => `<label class="option-pill"><input type="radio" name="${inputName}" value="${option.value}" ${Number(current) === option.value ? "checked" : ""} ${data} />${option.label}</label>`).join("")}
+      </div>
+    </article>`;
+  }
+
+  function validateCurrentPage(section, start, end) {
+    let valid = true;
+    for (let index = start; index < end; index += 1) {
+      if (getAnswer(section.id, index) === undefined) {
+        valid = false;
+        document.querySelector(`[data-card-index="${index}"]`)?.classList.add("is-missing");
+      }
+    }
+    if (!valid) {
+      document.getElementById("pageError").classList.add("show");
+      document.querySelector(".question-card.is-missing")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    return valid;
+  }
+
+  function nextPage(section, start, end, totalPages) {
+    if (!validateCurrentPage(section, start, end)) return;
+
+    if (state.pageIndex < totalPages - 1) {
+      state.pageIndex += 1;
+    } else if (state.sectionIndex < state.order.length - 1) {
+      state.sectionIndex += 1;
+      state.pageIndex = 0;
+    } else {
+      state.finished = true;
+      state.view = "results";
+    }
+    persist();
+    render();
+    scrollTop();
+  }
+
+  function previousPage() {
+    if (state.pageIndex > 0) {
+      state.pageIndex -= 1;
+    } else if (state.sectionIndex > 0) {
+      state.sectionIndex -= 1;
+      const previousSection = sectionById[state.order[state.sectionIndex]];
+      const count = previousSection.items?.length || previousSection.groups.length;
+      state.pageIndex = Math.ceil(count / previousSection.chunkSize) - 1;
+    } else {
+      state.view = "demographics";
+    }
+    persist();
+    render();
+    scrollTop();
+  }
+
+  function calculateScores() {
+    const anxietyAnswers = arrayAnswers("anxiety", 21);
+    const worryAnswers = arrayAnswers("worry", 16);
+    const depressionAnswers = arrayAnswers("depression", 21);
+    const objectAnswers = arrayAnswers("objectRelations", 45);
+    const schemaAnswers = arrayAnswers("emotionalSchemas", 28);
+    const characterAnswers = arrayAnswers("characterPatterns", 90);
+
+    const baiTotal = sum(anxietyAnswers);
+    const worrySection = sectionById.worry;
+    const pswqTotal = sum(worryAnswers.map((value, index) => worrySection.reverse.includes(index + 1) ? 6 - value : value));
+    const bdiTotal = sum(depressionAnswers);
+
+    const objectSection = sectionById.objectRelations;
+    const objectScored = objectAnswers.map((value, index) => objectSection.reverse.includes(index + 1) ? 1 - value : value);
+    const objectRelations = mapSubscales(objectSection.subscales, objectScored, true);
+
+    const schemaSection = sectionById.emotionalSchemas;
+    const emotionalSchemas = {};
+    Object.entries(schemaSection.dimensions).forEach(([key, definition]) => {
+      const values = definition.items.map(itemNumber => {
+        const raw = schemaAnswers[itemNumber - 1];
+        return definition.reverse.includes(itemNumber) ? 7 - raw : raw;
+      });
+      const average = sum(values) / values.length;
+      emotionalSchemas[key] = { average, normalized: clamp((average - 1) / 5) };
+    });
+
+    const characterSection = sectionById.characterPatterns;
+    const characterPatterns = mapSubscales(characterSection.subscales, characterAnswers, true);
+
+    const objectMean = mean(Object.values(objectRelations).map(item => item.normalized));
+    const schemaMean = mean(Object.values(emotionalSchemas).map(item => item.normalized));
+    const features = {
+      anxiety: mean([baiTotal / 63, (pswqTotal - 16) / 64, emotionalSchemas.lossControl.normalized, emotionalSchemas.duration.normalized, emotionalSchemas.rumination.normalized]),
+      lowMood: bdiTotal / 63,
+      relationshipSensitivity: mean([objectRelations.insecureAttachment.normalized, characterPatterns.hysteroid.normalized, characterPatterns.hysterical.normalized, objectRelations.egocentric.normalized * .65]),
+      withdrawal: mean([objectRelations.alienation.normalized, objectRelations.socialIncompetence.normalized, characterPatterns.schizoid.normalized, emotionalSchemas.numbness.normalized, emotionalSchemas.lowExpression.normalized]),
+      control: mean([characterPatterns.obsessiveCompulsive.normalized, emotionalSchemas.overlyRational.normalized, emotionalSchemas.nonAcceptance.normalized, emotionalSchemas.simplistic.normalized]),
+      selfCriticism: mean([bdiTotal / 63, emotionalSchemas.guilt.normalized, emotionalSchemas.rumination.normalized, characterPatterns.masochistic.normalized, emotionalSchemas.devalued.normalized]),
+      emotionalIntensity: mean([characterPatterns.hysteroid.normalized, characterPatterns.hysterical.normalized, emotionalSchemas.lossControl.normalized, emotionalSchemas.duration.normalized]),
+      recognition: mean([characterPatterns.narcissistic.normalized, objectRelations.egocentric.normalized, emotionalSchemas.invalidation.normalized, emotionalSchemas.lowConsensus.normalized])
+    };
+    features.balance = clamp(1 - mean([features.anxiety, features.lowMood, features.relationshipSensitivity, features.withdrawal, features.control, features.selfCriticism, features.emotionalIntensity, features.recognition, objectMean * .5, schemaMean * .5]));
+
+    return {
+      baiTotal,
+      baiLabel: baiLabel(baiTotal),
+      pswqTotal,
+      worryLabel: worryLabel(pswqTotal),
+      bdiTotal,
+      bdiLabel: bdiLabel(bdiTotal),
+      objectRelations,
+      emotionalSchemas,
+      characterPatterns,
+      features,
+      currentSelfHarmThought: depressionAnswers[8] || 0,
+      historicalSelfHarm: characterAnswers[29] === 1 || state.demographics.suicideHistory === "yes"
+    };
+  }
+
+  function arrayAnswers(sectionId, length) {
+    return Array.from({length}, (_, index) => Number(getAnswer(sectionId, index)));
+  }
+
+  function mapSubscales(definitions, scoredAnswers, percentages) {
+    const result = {};
+    Object.entries(definitions).forEach(([key, items]) => {
+      const raw = sum(items.map(itemNumber => scoredAnswers[itemNumber - 1]));
+      result[key] = {
+        raw,
+        maximum: items.length,
+        normalized: percentages ? raw / items.length : raw
+      };
+    });
+    return result;
+  }
+
+  function sum(values) { return values.reduce((total, value) => total + Number(value || 0), 0); }
+  function mean(values) { return values.length ? sum(values) / values.length : 0; }
+  function clamp(value, min = 0, max = 1) { return Math.min(max, Math.max(min, value)); }
+
+  function baiLabel(score) {
+    if (score <= 7) return "حداقل";
+    if (score <= 15) return "خفیف";
+    if (score <= 25) return "متوسط";
+    return "شدید";
+  }
+
+  function bdiLabel(score) {
+    if (score <= 13) return "حداقل";
+    if (score <= 19) return "خفیف";
+    if (score <= 28) return "متوسط";
+    return "شدید";
+  }
+
+  function worryLabel(score) {
+    if (score < 40) return "پایین‌تر در دامنه‌ی ابزار";
+    if (score < 62) return "میانه تا بالا در دامنه‌ی ابزار";
+    return "بالا در دامنه‌ی ابزار";
+  }
+
+  const objectLabels = {
+    egocentric: "تمرکز بر نیازهای خود در رابطه",
+    alienation: "احساس بیگانگی و فاصله",
+    insecureAttachment: "حساسیت به طرد و ناایمنی پیوند",
+    socialIncompetence: "دشواری در آسودگی اجتماعی"
+  };
+
+  const schemaLabels = {
+    invalidation: "احساس نادیده‌گرفته‌شدن",
+    incomprehensibility: "دشواری در فهم هیجان",
+    guilt: "شرم و گناه هیجانی",
+    simplistic: "نگاه صفر و یکی به هیجان",
+    devalued: "فاصله از ارزش‌های شخصی",
+    lossControl: "ترس از فقدان کنترل",
+    numbness: "بی‌حسی هیجانی",
+    overlyRational: "عقلانی‌سازی افراطی",
+    duration: "نگرانی از ماندگاری هیجان",
+    lowConsensus: "احساس متفاوت‌بودن",
+    nonAcceptance: "نپذیرفتن احساسات",
+    rumination: "نشخوار ذهنی",
+    lowExpression: "دشواری در ابراز احساس",
+    blame: "نسبت‌دادن هیجان به دیگران"
+  };
+
+  const characterLabels = {
+    schizoid: "فاصله‌گیری و خودبسندگی",
+    hysteroid: "شدت و نوسان هیجانی",
+    narcissistic: "نیاز به دیده‌شدن و خودارزش",
+    masochistic: "خودانتقادی و فداکاری افراطی",
+    obsessiveCompulsive: "نظم، کنترل و کمال‌گرایی",
+    hysterical: "بیان هیجانی و حساسیت رابطه‌ای"
+  };
+
+  const profiles = [
+    {
+      id: "balance", icon: "🌿", title: "تعادل‌جوی انعطاف‌پذیر",
+      description: "الگوی کلی پاسخ‌ها نشان می‌دهد معمولاً می‌توانید میان فکر، احساس و رابطه تعادل برقرار کنید و در برابر فشارها چند راه متفاوت را امتحان کنید.",
+      strengths: ["توان بازگشت به تعادل", "انعطاف در رابطه و تصمیم‌گیری", "ظرفیت پذیرش تجربه‌های متفاوت"],
+      focus: "تعادل به معنای نبودن دشواری نیست؛ حفظ خواب، ارتباط امن و زمان استراحت می‌تواند این ظرفیت را پایدارتر کند."
+    },
+    {
+      id: "anxiety", icon: "🧭", title: "ذهن آینده‌نگر و آماده‌باش",
+      description: "ذهن شما به‌سرعت احتمال‌ها و سناریوهای آینده را بررسی می‌کند. این آمادگی می‌تواند در برنامه‌ریزی مفید باشد، اما گاهی بدن و ذهن را در حالت آماده‌باش نگه می‌دارد.",
+      strengths: ["پیش‌بینی خطرها", "مسئولیت‌پذیری", "توجه به پیامدها"],
+      focus: "تمرین جداکردن «مسئله‌ی قابل حل» از «احتمال ذهنی»، تنفس آهسته و تعیین زمان مشخص برای نگرانی می‌تواند فشار را کمتر کند."
+    },
+    {
+      id: "relationshipSensitivity", icon: "🤝", title: "پیوندجوی حساس",
+      description: "رابطه‌های نزدیک برای شما اهمیت زیادی دارند و تغییر در توجه، فاصله یا اطمینان دیگران ممکن است سریع‌تر از معمول بر احساس امنیت شما اثر بگذارد.",
+      strengths: ["وفاداری و اهمیت‌دادن به رابطه", "حساسیت به نیازهای دیگران", "ظرفیت صمیمیت عمیق"],
+      focus: "بیان مستقیم نیازها، تحمل فاصله‌های کوتاه و بررسی شواهد پیش از نتیجه‌گیری درباره‌ی طردشدن می‌تواند رابطه‌ها را آرام‌تر کند."
+    },
+    {
+      id: "withdrawal", icon: "🏕️", title: "خلوت‌گزین محافظ",
+      description: "برای حفظ آرامش یا جلوگیری از آسیب، ممکن است به خلوت، فاصله یا کنترل بیشتر مرزهای شخصی تکیه کنید. این راهبرد گاهی محافظت‌کننده و گاهی جداکننده است.",
+      strengths: ["استقلال", "توان تمرکز در خلوت", "مرزبندی با فشار بیرونی"],
+      focus: "ارتباط‌های کوچک اما منظم، گفت‌وگو با یک فرد امن و توجه به زمان‌هایی که خلوت به انزوا تبدیل می‌شود، مفید است."
+    },
+    {
+      id: "control", icon: "🧩", title: "سامان‌دهنده‌ی دقیق",
+      description: "ساختار، منطق و درست انجام دادن کارها برای شما آرامش‌بخش است. در شرایط مبهم ممکن است نیاز به کنترل یا قطعیت بیشتر شود.",
+      strengths: ["دقت و وجدان کاری", "توان برنامه‌ریزی", "پایبندی به استانداردها"],
+      focus: "تعریف «به‌اندازه‌ی کافی خوب»، واگذارکردن بخش‌های کوچک و تمرین ماندن در ابهام می‌تواند از فرسودگی جلوگیری کند."
+    },
+    {
+      id: "selfCriticism", icon: "🌧️", title: "منتقدِ درونی خسته",
+      description: "هنگام فشار یا ناکامی، صدای منتقد درونی ممکن است پررنگ شود و انرژی، امید یا احساس ارزشمندی را کاهش دهد.",
+      strengths: ["مسئولیت‌پذیری", "توان دیدن خطاها", "اهمیت‌دادن به رشد"],
+      focus: "همان لحن دلسوزانه‌ای را که برای یک دوست به کار می‌برید، با خودتان تمرین کنید و موفقیت‌های کوچک را به‌طور آگاهانه ثبت کنید."
+    },
+    {
+      id: "emotionalIntensity", icon: "🌊", title: "موج‌سوار هیجان",
+      description: "احساسات ممکن است با سرعت یا شدت بیشتری ظاهر شوند و گاهی تصمیم‌گیری را تحت تأثیر قرار دهند؛ در عوض، تجربه‌ی عاطفی شما می‌تواند زنده و پرمعنا باشد.",
+      strengths: ["شور و درگیری عاطفی", "توان همدلی", "بیان زنده‌ی تجربه‌ها"],
+      focus: "نام‌گذاری احساس، مکث کوتاه پیش از واکنش و تنظیم بدن از طریق حرکت، آب، خواب و تنفس می‌تواند موج را قابل مدیریت‌تر کند."
+    },
+    {
+      id: "recognition", icon: "✨", title: "جست‌وجوگر ارزش و دیده‌شدن",
+      description: "احساس ارزشمندی شما ممکن است تا حدی به بازخورد، توجه یا کیفیت عملکرد وابسته شود. دیده‌شدن برایتان انرژی‌بخش است، اما نبود آن می‌تواند آسیب‌پذیرکننده باشد.",
+      strengths: ["انگیزه برای پیشرفت", "توان اثرگذاری اجتماعی", "توجه به تصویر و کیفیت ارائه"],
+      focus: "جداکردن ارزش شخصی از عملکرد، پذیرش بازخوردهای معمولی و ساختن معیارهای درونی می‌تواند ثبات بیشتری ایجاد کند."
+    }
+  ];
+
+  function profileRanking(features) {
+    return profiles
+      .map(profile => ({...profile, score: clamp(features[profile.id] || 0)}))
+      .sort((a, b) => b.score - a.score);
+  }
+
+  function renderResults() {
+    updateHeader();
+    progressWrap.hidden = false;
+    progressBar.style.width = "100%";
+    const scores = calculateScores();
+    const rankedProfiles = profileRanking(scores.features);
+    const primary = rankedProfiles[0];
+    const secondary = rankedProfiles.slice(1, 3);
+    const currentRisk = scores.currentSelfHarmThought;
+    const historicalRisk = scores.historicalSelfHarm;
+
+    const riskCard = currentRisk > 0
+      ? `<section class="safety-card"><h3>یک نکته‌ی مهم درباره‌ی ایمنی شما</h3><p>پاسخ‌های شما نشان می‌دهد در دو هفته‌ی اخیر افکاری درباره‌ی آسیب‌زدن به خود داشته‌اید. این نتیجه تشخیص نیست، اما مهم است آن را جدی بگیرید. امروز با روان‌شناس، روان‌پزشک یا یک فرد قابل اعتماد صحبت کنید. اگر احتمال می‌دهید به خود آسیب بزنید، تنها نمانید، ابزارهای آسیب را از دسترس دور کنید و با خدمات اورژانسی محل زندگی تماس بگیرید.</p></section>`
+      : historicalRisk
+        ? `<section class="safety-card warning"><h3>توجه به سابقه‌ی خودآسیبی</h3><p>در پاسخ‌ها نشانه‌ای از سابقه‌ی اقدام یا خودآسیبی دیده می‌شود. حتی اگر اکنون در خطر نیستید، گفت‌وگو با یک متخصص سلامت روان می‌تواند برای ساختن برنامه‌ی ایمنی و حمایت بلندمدت مفید باشد.</p></section>`
+        : "";
+
+    const broadAxes = [
+      ["آماده‌باش و نگرانی", scores.features.anxiety],
+      ["افت خلق و انرژی", scores.features.lowMood],
+      ["حساسیت رابطه‌ای", scores.features.relationshipSensitivity],
+      ["فاصله‌گیری", scores.features.withdrawal],
+      ["نیاز به کنترل", scores.features.control],
+      ["شدت هیجانی", scores.features.emotionalIntensity]
+    ];
+
+    const topObject = topEntries(scores.objectRelations, 4);
+    const topSchemas = topEntries(scores.emotionalSchemas, 5);
+    const topCharacter = topEntries(scores.characterPatterns, 5);
+
+    app.innerHTML = `
+      ${riskCard}
+      <section class="result-hero">
+        <span class="eyebrow">بازخورد شخصی · غیرتشخیصی</span>
+        <h1>تصویری کلی از الگوی پاسخ‌های شما</h1>
+        <p class="lead">این جمع‌بندی از کنار هم گذاشتن نشانه‌های هیجانی، نگرانی، کیفیت رابطه و الگوهای معمول منش ساخته شده است. هیچ پروفایلی «خوب» یا «بد» نیست و نتیجه جایگزین گفت‌وگو با متخصص نیست.</p>
+        <div class="disclaimer">درصد شباهت فقط یک شاخص داخلی برای مقایسه‌ی پروفایل‌های همین سایت است و هنجار بالینی یا تشخیص شخصیت محسوب نمی‌شود.</div>
+      </section>
+
+      <div class="result-grid">
+        <section class="profile-card">
+          <div class="profile-icon" aria-hidden="true">${primary.icon}</div>
+          <span class="match-badge">بیشترین انطباق: ${toFa(Math.round(primary.score * 100))}٪</span>
+          <h2>${primary.title}</h2>
+          <p>${primary.description}</p>
+          <h3>ظرفیت‌های احتمالی</h3>
+          <ul>${primary.strengths.map(item => `<li>${item}</li>`).join("")}</ul>
+          <h3>نقطه‌ی تمرکز</h3>
+          <p>${primary.focus}</p>
+        </section>
+
+        <section class="profile-card">
+          <h3>گرایش‌های همراه</h3>
+          <div class="secondary-profiles">
+            ${secondary.map(profile => `<div class="secondary-profile"><span class="icon" aria-hidden="true">${profile.icon}</span><div><strong>${profile.title}</strong><small>${toFa(Math.round(profile.score * 100))}٪ انطباق</small></div></div>`).join("")}
+          </div>
+          <div class="disclaimer">پروفایل اصلی خلاصه‌ای از چند محور است، نه برچسب ثابت. وضعیت خواب، فشارهای اخیر و محیط رابطه‌ای می‌توانند پاسخ‌ها را تغییر دهند.</div>
+        </section>
+      </div>
+
+      <section class="score-panel">
+        <h2>سه نشانگر اصلی</h2>
+        <div class="metric-grid">
+          ${metricCard("نشانه‌های اضطرابی", `${toFa(scores.baiTotal)} از ۶۳`, scores.baiLabel)}
+          ${metricCard("نگرانی پایدار", `${toFa(scores.pswqTotal)} از ۸۰`, scores.worryLabel)}
+          ${metricCard("خلق و انرژی", `${toFa(scores.bdiTotal)} از ۶۳`, scores.bdiLabel)}
+        </div>
+      </section>
+
+      <section class="detail-panel">
+        <h2>محورهای کلی</h2>
+        ${barList(broadAxes)}
+      </section>
+
+      <div class="detail-grid">
+        <section class="detail-panel">
+          <h2>الگوهای رابطه‌ای</h2>
+          <p class="section-description">نمره‌ی بالاتر یعنی آن مضمون در پاسخ‌های شما بیشتر دیده شده است؛ این نمره تشخیص نیست.</p>
+          ${barList(topObject.map(([key, value]) => [objectLabels[key], value.normalized]))}
+        </section>
+        <section class="detail-panel">
+          <h2>شیوه‌ی مواجهه با هیجان</h2>
+          <p class="section-description">پنج مضمون برجسته‌تر در پاسخ‌های یک ماه گذشته.</p>
+          ${barList(topSchemas.map(([key, value]) => [schemaLabels[key], value.normalized]))}
+        </section>
+      </div>
+
+      <section class="detail-panel">
+        <h2>گرایش‌های منش</h2>
+        <p class="section-description">نام‌ها به زبان توصیفی و غیرآسیب‌شناختی نمایش داده شده‌اند. درصدها میزان تأیید عبارت‌های هر خوشه را نشان می‌دهند.</p>
+        ${barList(topCharacter.map(([key, value]) => [characterLabels[key], value.normalized]))}
+      </section>
+
+      <section class="score-panel">
+        <h2>برداشت عملی</h2>
+        <p>برای استفاده‌ی مفید از نتیجه، یک محور با نمره‌ی بالاتر را انتخاب کنید و فقط یک تغییر کوچک و قابل اندازه‌گیری برای دو هفته‌ی آینده در نظر بگیرید؛ برای مثال ثبت زمان نگرانی، یک گفت‌وگوی مستقیم، یا یک وقفه‌ی کوتاه پیش از واکنش.</p>
+        <div class="result-actions">
+          <button id="printResult" class="btn btn-primary">چاپ یا ذخیره‌ی نتیجه</button>
+          <button id="restartSurvey" class="btn btn-danger">پاک‌کردن پاسخ‌ها و شروع دوباره</button>
+        </div>
+        <p id="submissionState" class="submission-state">${config.submissionEndpoint ? "در حال ارسال پاسخ پژوهشی…" : "نسخه‌ی نمایشی: پاسخ‌ها فقط در همین مرورگر محاسبه شده‌اند و در جایی ثبت نشده‌اند."}</p>
+      </section>`;
+
+    document.getElementById("printResult").addEventListener("click", () => window.print());
+    document.getElementById("restartSurvey").addEventListener("click", () => {
+      const confirmed = window.confirm("همه‌ی پاسخ‌های این جلسه پاک شوند؟");
+      if (!confirmed) return;
+      try { sessionStorage.removeItem(STORAGE_KEY); } catch (error) { console.warn(error); }
+      state = freshState();
+      render();
+      scrollTop();
+    });
+
+    if (config.submissionEndpoint && !state.submissionAttempted) {
+      state.submissionAttempted = true;
+      persist();
+      submitResearchData(scores);
+    }
+  }
+
+  function metricCard(label, value, note) {
+    return `<article class="metric"><div class="metric-label">${label}</div><div class="metric-value">${value}</div><div class="metric-note">${note}</div></article>`;
+  }
+
+  function barList(entries) {
+    return `<div class="bar-list">${entries.map(([label, normalized]) => {
+      const percent = Math.round(clamp(normalized) * 100);
+      return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar-track"><div class="bar-fill" style="width:${percent}%"></div></div><span class="bar-value">${toFa(percent)}٪</span></div>`;
+    }).join("")}</div>`;
+  }
+
+  function topEntries(object, count) {
+    return Object.entries(object).sort((a, b) => b[1].normalized - a[1].normalized).slice(0, count);
+  }
+
+  async function submitResearchData(scores) {
+    const status = document.getElementById("submissionState");
+    const payload = {
+      version: "1.0.0",
+      responseId: state.responseId,
+      clientCreatedAt: state.createdAt,
+      submittedAt: new Date().toISOString(),
+      randomizedSectionOrder: state.order,
+      demographics: state.demographics,
+      answers: state.answers,
+      scores
+    };
+
+    try {
+      await fetch(config.submissionEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        cache: "no-store",
+        keepalive: true,
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+      if (status) {
+        status.textContent = "درخواست ثبت پاسخ‌ها ارسال شد. نتیجه‌ی شخصی شما فقط در همین صفحه نمایش داده می‌شود.";
+        status.className = "submission-state success";
+      }
+    } catch (error) {
+      console.error(error);
+      if (status) {
+        status.textContent = "ارسال پاسخ پژوهشی با خطا روبه‌رو شد. نتیجه‌ی شخصی همچنان قابل مشاهده است؛ لطفاً اتصال اینترنت را بررسی کنید.";
+        status.className = "submission-state warning";
+      }
+    }
+  }
+
+  function escapeAttr(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;");
+  }
+
+  function runDemoMode() {
+    if (!new URLSearchParams(location.search).has("demo") || state.finished) return false;
+    state.demographics = {
+      age: "24", gender: "woman", university: "دانشگاه نمونه", degree: "کارشناسی ارشد",
+      parentEducation: "کارشناسی", socioeconomicLadder: "6", suicideHistory: "no", addictionHistory: "no"
+    };
+    survey.sections.forEach(section => {
+      const length = section.items?.length || section.groups.length;
+      for (let index = 0; index < length; index += 1) {
+        let value;
+        if (section.type === "linear") value = section.min + Math.floor(Math.random() * (section.max - section.min + 1));
+        else if (section.type === "grouped") value = Math.floor(Math.random() * 4);
+        else if (section.type === "binary") value = Math.round(Math.random());
+        else value = Math.floor(Math.random() * section.options.length);
+        state.answers[answerKey(section.id, index)] = value;
+      }
+    });
+    state.finished = true;
+    state.view = "results";
+    persist();
+    return true;
+  }
+
+  document.querySelector(".brand").addEventListener("click", event => {
+    event.preventDefault();
+    if (state.finished) return;
+    state.view = "intro";
+    persist();
+    render();
+  });
+
+  if (!survey?.sections?.length) {
+    app.innerHTML = `<section class="safety-card"><h3>خطا در بارگذاری</h3><p>داده‌های پرسش‌نامه در دسترس نیست.</p></section>`;
+    return;
+  }
+
+  runDemoMode();
+  render();
+})();
+
+</script>
+</body>
+</html>

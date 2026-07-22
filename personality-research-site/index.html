@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ec" />
+  <meta name="description" content="پرسش‌نامه‌ی پژوهشی الگوهای شخصیتی، روابط موضوعی و تجارب هیجانی" />
+  <title>پرسش‌نامه‌ی پژوهشی الگوهای شخصیتی، روابط موضوعی و تجارب هیجانی</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sahel-font@3.4.0/dist/font-face.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="بازگشت به ابتدای پرسش‌نامه">
+      <span class="brand-mark" aria-hidden="true">◌</span>
+      <span>پژوهش دانشجویی</span>
+    </a>
+    <div id="headerMeta" class="header-meta" hidden>
+      <span id="sectionCounter"></span>
+      <span class="dot" aria-hidden="true"></span>
+      <span id="answeredCounter"></span>
+    </div>
+  </header>
+
+  <div id="progressWrap" class="progress-wrap" hidden aria-hidden="true">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  <main id="app" class="app-shell" aria-live="polite">
+    <section class="loading-card">
+      <span class="loader" aria-hidden="true"></span>
+      <p>در حال آماده‌سازی پرسش‌نامه…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>پاسخ‌ها بی‌نام هستند.</span>
+    <span>این بازخورد جایگزین ارزیابی تخصصی نیست.</span>
+  </footer>
+
+  <noscript>
+    <div class="noscript">برای تکمیل این پرسش‌نامه باید JavaScript مرورگر فعال باشد.</div>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="survey-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
