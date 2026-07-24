@@ -197,13 +197,39 @@
               </div>
             </fieldset>
 
-            <label for="degree">مدرک تحصیلی</label>
-              ${selectField("degree", ["پایین‌تر از دیپلم", "دیپلم", "کارشناسی", "کارشناسی ارشد", "دکترا", "ترجیح می‌دهم نگویم"], d.degree)}
-            <div class="field">
-            
-              <label for="parentEducation">بالاترین مدرک تحصیلی بین پدر و مادر شما چیست؟</label>
-              ${selectField("parentEducation", ["زیر دیپلم", "دیپلم", "کارشناسی", "کارشناسی ارشد", "دکترا یا بالاتر", "نمی‌دانم"], d.parentEducation)}
-            </div>
+          <div class="field">
+  <label for="degree">مدرک تحصیلی</label>
+  ${selectField(
+    "degree",
+    [
+      "پایین‌تر از دیپلم",
+      "دیپلم",
+      "کارشناسی",
+      "کارشناسی ارشد",
+      "دکترا",
+      "ترجیح می‌دهم نگویم"
+    ],
+    d.degree
+  )}
+</div>
+
+<div class="field">
+  <label for="parentEducation">
+    بالاترین مدرک تحصیلی بین پدر و مادر شما چیست؟
+  </label>
+  ${selectField(
+    "parentEducation",
+    [
+      "زیر دیپلم",
+      "دیپلم",
+      "کارشناسی",
+      "کارشناسی ارشد",
+      "دکترا یا بالاتر",
+      "نمی‌دانم"
+    ],
+    d.parentEducation
+  )}
+</div>
 
             <fieldset class="field full">
               <legend>تصور کنید نردبانی ۱۰ پله‌ای وجود دارد که موقعیت اجتماعی-اقتصادی خانواده‌ها را از پایین به بالا نشان می‌دهد؛ با توجه به خانواده‌ای که در آن بزرگ شده‌اید، در کدام پله قرار می‌گیرید؟</legend>
