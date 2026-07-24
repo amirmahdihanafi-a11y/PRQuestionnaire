@@ -144,7 +144,7 @@
         <div class="consent-box">
           <label class="check-row">
             <input id="consent" type="checkbox" />
-            <span>متن بالا را خوانده‌ام، ۱۸ تا ۳۰ سال دارم، دانشجوی یکی از دانشگاه‌های استان تهران هستم و با شرکت داوطلبانه در این پژوهش موافقم.</span>
+            <span>متن بالا را خوانده‌ام، ۱۸ تا ۴۰ سال دارم و با شرکت داوطلبانه در این پژوهش موافقم.</span>
           </label>
           ${ownerBits.length ? `<p class="owner-meta">${ownerBits.join(" · ")}</p>` : ""}
           <div id="introError" class="inline-error">برای شروع، تأیید آگاهانه‌ی بالا لازم است.</div>
@@ -185,8 +185,8 @@
           <div class="form-grid">
             <div class="field">
               <label for="age">سن</label>
-              <input id="age" name="age" type="number" min="18" max="30" inputmode="numeric" value="${escapeAttr(d.age ?? "")}" required />
-              <small>عدد بین ۱۸ تا ۳۰</small>
+              <input id="age" name="age" type="number" min="18" max="40" inputmode="numeric" value="${escapeAttr(d.age ?? "")}" required />
+              <small>عدد بین ۱۸ تا ۴۰</small>
             </div>
 
             <fieldset class="field">
@@ -197,17 +197,10 @@
               </div>
             </fieldset>
 
-            <div class="field full">
-              <label for="university">دانشگاه محل تحصیل</label>
-              <input id="university" name="university" type="text" maxlength="120" autocomplete="off" value="${escapeAttr(d.university ?? "")}" required />
-            </div>
-
+            <label for="degree">مدرک تحصیلی</label>
+              ${selectField("degree", ["پایین‌تر از دیپلم", "دیپلم", "کارشناسی", "کارشناسی ارشد", "دکترا", "ترجیح می‌دهم نگویم"], d.degree)}
             <div class="field">
-              <label for="degree">مقطع تحصیلی</label>
-              ${selectField("degree", ["کارشناسی", "کارشناسی ارشد", "دکترا"], d.degree)}
-            </div>
-
-            <div class="field">
+            
               <label for="parentEducation">بالاترین مدرک تحصیلی بین پدر و مادر شما چیست؟</label>
               ${selectField("parentEducation", ["زیر دیپلم", "دیپلم", "کارشناسی", "کارشناسی ارشد", "دکترا یا بالاتر", "نمی‌دانم"], d.parentEducation)}
             </div>
@@ -236,7 +229,7 @@
               </div>
             </fieldset>
           </div>
-          <div id="demoError" class="inline-error">لطفاً همه‌ی اطلاعات این صفحه را تکمیل کنید. سن باید بین ۱۸ تا ۳۰ سال باشد.</div>
+         <div id="demoError" class="inline-error">لطفاً همه‌ی اطلاعات این صفحه را تکمیل کنید. سن باید بین ۱۸ تا ۴۰ سال باشد.</div>
           <div class="nav-row">
             <button type="button" id="demoBack" class="btn btn-secondary"><span aria-hidden="true">→</span> بازگشت</button>
             <button type="submit" class="btn btn-primary">ورود به بخش اول <span aria-hidden="true">←</span></button>
@@ -273,8 +266,8 @@
     persist();
 
     const age = Number(next.age);
-    const required = ["age", "gender", "university", "degree", "parentEducation", "socioeconomicLadder", "suicideHistory", "addictionHistory"];
-    const complete = required.every(key => String(next[key] ?? "").trim()) && Number.isInteger(age) && age >= 18 && age <= 30;
+const required = ["age", "gender", "degree", "parentEducation", "socioeconomicLadder", "suicideHistory", "addictionHistory"];
+    const complete = required.every(key => String(next[key] ?? "").trim()) && Number.isInteger(age) && age >= 18 && age <= 40;
     if (requireComplete && !complete) {
       document.getElementById("demoError").classList.add("show");
       return false;
@@ -807,7 +800,7 @@
   function runDemoMode() {
     if (!new URLSearchParams(location.search).has("demo") || state.finished) return false;
     state.demographics = {
-      age: "24", gender: "woman", university: "دانشگاه نمونه", degree: "کارشناسی ارشد",
+      age: "24", gender: "woman", degree: "کارشناسی ارشد",
       parentEducation: "کارشناسی", socioeconomicLadder: "6", suicideHistory: "no", addictionHistory: "no"
     };
     survey.sections.forEach(section => {
